@@ -13,6 +13,9 @@
 		9D859B1D1D9E32A80055F23A /* Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 9D859B1A1D9E32A80055F23A /* Info.plist */; };
 		9D859B1F1D9E32DB0055F23A /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9D859B1E1D9E32DB0055F23A /* LaunchScreen.storyboard */; };
 		9D859B211D9E335D0055F23A /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9D859B201D9E335D0055F23A /* Main.storyboard */; };
+		9D859B231D9E35770055F23A /* WeatherServiceProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D859B221D9E35770055F23A /* WeatherServiceProtocol.swift */; };
+		9D859B251D9E38840055F23A /* YahooWeatherService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D859B241D9E38840055F23A /* YahooWeatherService.swift */; };
+		9D859B271D9E3F3A0055F23A /* BaseWeatherService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D859B261D9E3F3A0055F23A /* BaseWeatherService.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -23,6 +26,9 @@
 		9D859B1A1D9E32A80055F23A /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		9D859B1E1D9E32DB0055F23A /* LaunchScreen.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = LaunchScreen.storyboard; sourceTree = "<group>"; };
 		9D859B201D9E335D0055F23A /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
+		9D859B221D9E35770055F23A /* WeatherServiceProtocol.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WeatherServiceProtocol.swift; sourceTree = "<group>"; };
+		9D859B241D9E38840055F23A /* YahooWeatherService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = YahooWeatherService.swift; sourceTree = "<group>"; };
+		9D859B261D9E3F3A0055F23A /* BaseWeatherService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseWeatherService.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -78,6 +84,9 @@
 		9D859B151D9E32600055F23A /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				9D859B221D9E35770055F23A /* WeatherServiceProtocol.swift */,
+				9D859B261D9E3F3A0055F23A /* BaseWeatherService.swift */,
+				9D859B241D9E38840055F23A /* YahooWeatherService.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -171,7 +180,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9D859B231D9E35770055F23A /* WeatherServiceProtocol.swift in Sources */,
 				9D859B1B1D9E32A80055F23A /* AppDelegate.swift in Sources */,
+				9D859B271D9E3F3A0055F23A /* BaseWeatherService.swift in Sources */,
+				9D859B251D9E38840055F23A /* YahooWeatherService.swift in Sources */,
 				9D859B051D9E31D30055F23A /* ViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -315,6 +327,7 @@
 				9D859B131D9E31D30055F23A /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

@@ -25,8 +25,10 @@ struct WeatherServiceError: Error {
 }
 
 protocol ForecastProtocol {
-    var time: String { get }
-    var temperature: String { get }
+    var date: String { get }
+    var low: String { get }
+    var high: String { get }
+    var text: String { get }
 }
 
 protocol WeatherProtocol {

@@ -20,6 +20,11 @@ class YahooWeatherService: BaseWeatherService {
     }
     
     override func parse(data: Data) throws -> WeatherProtocol {
-        throw WeatherServiceError(errorCode: .JSONParsingFailed)
+        let json = try JSONSerialization.jsonObject(with: data)
+        if let weather = Weather(json: json) {
+            return weather
+        }else {
+            throw WeatherServiceError(errorCode: .JSONParsingFailed)
+        }
     }
 }

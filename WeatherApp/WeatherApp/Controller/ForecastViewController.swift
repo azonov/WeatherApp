@@ -8,7 +8,7 @@
 
 import UIKit
 
-class ViewController: UIViewController {
+class ForecastViewController: UIViewController {
     
     let service = BaseWeatherService.weatherService(service: .Yahoo)
     

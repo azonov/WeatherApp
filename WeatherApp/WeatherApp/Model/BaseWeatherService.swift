@@ -23,14 +23,25 @@ class BaseWeatherService : WeatherServiceProtocol {
         }
     }
     
-    func retrieveWeatherInfo(locationName: String, completionHandler: (WeatherProtocol?, WeatherServiceError?) -> Void) {//Throws?
+    func retrieveWeatherInfo(locationName: String, completionHandler: @escaping (Result<WeatherProtocol>) -> Void) {
         guard let url = urlRequestUrlForLocation(withName: locationName) else {
             let error = WeatherServiceError(errorCode : .URLError)
-            completionHandler(nil, error)
+            completionHandler(Result.failure(error))
             return
         }
-        let task = BaseWeatherService.session.dataTask(with: url) { (data, response, error) in
-            
+        let task = BaseWeatherService.session.dataTask(with: url) {[weak self] (data, response, error) in
+            if let error = error {
+                completionHandler(Result.failure(error))
+                return
+            }
+            if let data = data {
+                do {
+                    guard let weather = try self?.parse(data: data) else { return }
+                    completionHandler(Result.success(weather))
+                } catch {
+                    completionHandler(Result.failure(error))
+                }
+            }
         }
         task.resume()
     }
@@ -39,8 +50,8 @@ class BaseWeatherService : WeatherServiceProtocol {
         return nil
     }
     
-    func parse(data: Data) -> WeatherProtocol? {
-        return nil;
+    func parse(data: Data) throws -> WeatherProtocol {
+        throw WeatherServiceError(errorCode: .JSONParsingFailed)
     }
     
 }

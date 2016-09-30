@@ -19,4 +19,7 @@ class YahooWeatherService: BaseWeatherService {
         return URL(string: endpoint)
     }
     
+    override func parse(data: Data) throws -> WeatherProtocol {
+        throw WeatherServiceError(errorCode: .JSONParsingFailed)
+    }
 }

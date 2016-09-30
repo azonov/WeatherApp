@@ -14,10 +14,15 @@ class ViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        service.retrieveWeatherInfo(locationName: "Voronezh") { (weather, error) in
-            
+        service.retrieveWeatherInfo(locationName: "Voronezh") { (result) in
+            switch (result) {
+            case .success(let weather):
+                print("weather : \(weather)")
+            case .failure(let error):
+                print("error : \(error)")
+            }
         }
     }
-
+    
 }
 

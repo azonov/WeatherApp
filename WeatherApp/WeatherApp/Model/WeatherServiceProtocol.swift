@@ -8,7 +8,12 @@
 
 import Foundation
 
-struct WeatherServiceError {
+enum Result<T> {
+    case success(T)
+    case failure(Error)
+}
+
+struct WeatherServiceError: Error {
     enum Code: Int {
         case URLError                 = -6000
         case NetworkRequestFailed     = -6001
@@ -29,8 +34,8 @@ protocol WeatherProtocol {
     var forecasts : [ForecastProtocol] { get }
 }
 
-typealias WeatherCompletionHandler = (WeatherProtocol?, WeatherServiceError?) -> Void
+typealias WeatherCompletionHandler = (Result<WeatherProtocol>) -> Void
 
 protocol WeatherServiceProtocol {
-    func retrieveWeatherInfo(locationName: String, completionHandler: WeatherCompletionHandler)
+    func retrieveWeatherInfo(locationName: String, completionHandler: @escaping WeatherCompletionHandler)
 }

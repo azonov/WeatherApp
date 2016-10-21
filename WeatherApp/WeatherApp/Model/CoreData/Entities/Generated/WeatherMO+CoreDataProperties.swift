@@ -12,7 +12,7 @@ import CoreData
 extension WeatherMO {
 
     @nonobjc public class func fetchRequest() -> NSFetchRequest<WeatherMO> {
-        return NSFetchRequest<WeatherMO>(entityName: "Weather");
+        return NSFetchRequest<WeatherMO>(entityName: "Weather")
     }
 
     @NSManaged public var forecasts: NSSet?

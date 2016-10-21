@@ -9,7 +9,7 @@
 import Foundation
 import CoreData
 
-class CoreDataManager {
+class CoreDataManager : CoreDataProtocol {
     
     // MARK: - Core Data stack
     lazy var persistentContainer: NSPersistentContainer = {

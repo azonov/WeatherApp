@@ -15,3 +15,7 @@ public struct ProviderError: Error {
     
     let errorCode: Code
 }
+
+protocol ProviderProtocol {
+    
+}

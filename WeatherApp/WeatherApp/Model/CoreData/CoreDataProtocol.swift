@@ -7,6 +7,7 @@
 //
 
 import Foundation
+import CoreData
 
 public struct WeatherCoreDataError: Error {
     enum Code: Int {
@@ -15,4 +16,9 @@ public struct WeatherCoreDataError: Error {
     }
     
     let errorCode: Code
+}
+
+protocol CoreDataProtocol {
+    func saveContext()
+    var persistentContainer: NSPersistentContainer  { get }
 }

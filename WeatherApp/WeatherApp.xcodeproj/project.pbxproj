@@ -15,6 +15,10 @@
 		9D859B1D1D9E32A80055F23A /* Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 9D859B1A1D9E32A80055F23A /* Info.plist */; };
 		9D859B1F1D9E32DB0055F23A /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9D859B1E1D9E32DB0055F23A /* LaunchScreen.storyboard */; };
 		9D859B211D9E335D0055F23A /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9D859B201D9E335D0055F23A /* Main.storyboard */; };
+		9DBD3EDA1DBA90C200ED8FEA /* YahooWeatherProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DBD3ED91DBA90C200ED8FEA /* YahooWeatherProvider.swift */; };
+		9DBD3EDD1DBA939C00ED8FEA /* ParserProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DBD3EDC1DBA939C00ED8FEA /* ParserProtocol.swift */; };
+		9DBD3EDF1DBA95A800ED8FEA /* BaseParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DBD3EDE1DBA95A800ED8FEA /* BaseParser.swift */; };
+		9DBD3EE11DBA961900ED8FEA /* YahooWeatherParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DBD3EE01DBA961900ED8FEA /* YahooWeatherParser.swift */; };
 		9DCF9BBB1DBA4286007518CC /* CoreDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DCF9BA61DBA4286007518CC /* CoreDataManager.swift */; };
 		9DCF9BBC1DBA4286007518CC /* ForecastMO+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DCF9BA91DBA4286007518CC /* ForecastMO+CoreDataClass.swift */; };
 		9DCF9BBD1DBA4286007518CC /* LocationMO+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DCF9BAA1DBA4286007518CC /* LocationMO+CoreDataClass.swift */; };
@@ -40,6 +44,10 @@
 		9D859B1A1D9E32A80055F23A /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		9D859B1E1D9E32DB0055F23A /* LaunchScreen.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = LaunchScreen.storyboard; sourceTree = "<group>"; };
 		9D859B201D9E335D0055F23A /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
+		9DBD3ED91DBA90C200ED8FEA /* YahooWeatherProvider.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = YahooWeatherProvider.swift; sourceTree = "<group>"; };
+		9DBD3EDC1DBA939C00ED8FEA /* ParserProtocol.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ParserProtocol.swift; sourceTree = "<group>"; };
+		9DBD3EDE1DBA95A800ED8FEA /* BaseParser.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseParser.swift; sourceTree = "<group>"; };
+		9DBD3EE01DBA961900ED8FEA /* YahooWeatherParser.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = YahooWeatherParser.swift; sourceTree = "<group>"; };
 		9DCF9BA61DBA4286007518CC /* CoreDataManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CoreDataManager.swift; sourceTree = "<group>"; };
 		9DCF9BA91DBA4286007518CC /* ForecastMO+CoreDataClass.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "ForecastMO+CoreDataClass.swift"; sourceTree = "<group>"; };
 		9DCF9BAA1DBA4286007518CC /* LocationMO+CoreDataClass.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "LocationMO+CoreDataClass.swift"; sourceTree = "<group>"; };
@@ -108,6 +116,7 @@
 		9D859B151D9E32600055F23A /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				9DBD3EDB1DBA935300ED8FEA /* Parser */,
 				9DCF9BA51DBA4286007518CC /* CoreData */,
 				9DCF9BB31DBA4286007518CC /* Helpers */,
 				9DCF9BB51DBA4286007518CC /* Network */,
@@ -132,11 +141,21 @@
 			path = Controller;
 			sourceTree = "<group>";
 		};
+		9DBD3EDB1DBA935300ED8FEA /* Parser */ = {
+			isa = PBXGroup;
+			children = (
+				9DBD3EDC1DBA939C00ED8FEA /* ParserProtocol.swift */,
+				9DBD3EDE1DBA95A800ED8FEA /* BaseParser.swift */,
+				9DBD3EE01DBA961900ED8FEA /* YahooWeatherParser.swift */,
+			);
+			path = Parser;
+			sourceTree = "<group>";
+		};
 		9DCF9BA51DBA4286007518CC /* CoreData */ = {
 			isa = PBXGroup;
 			children = (
-				9DCF9BA61DBA4286007518CC /* CoreDataManager.swift */,
 				9D6A14531DBA83EA00715576 /* CoreDataProtocol.swift */,
+				9DCF9BA61DBA4286007518CC /* CoreDataManager.swift */,
 				9DCF9BA71DBA4286007518CC /* Entities */,
 				9DCF9BB01DBA4286007518CC /* Model */,
 			);
@@ -155,9 +174,9 @@
 		9DCF9BA81DBA4286007518CC /* Editable */ = {
 			isa = PBXGroup;
 			children = (
-				9DCF9BA91DBA4286007518CC /* ForecastMO+CoreDataClass.swift */,
 				9DCF9BAA1DBA4286007518CC /* LocationMO+CoreDataClass.swift */,
 				9DCF9BAB1DBA4286007518CC /* WeatherMO+CoreDataClass.swift */,
+				9DCF9BA91DBA4286007518CC /* ForecastMO+CoreDataClass.swift */,
 			);
 			path = Editable;
 			sourceTree = "<group>";
@@ -191,8 +210,8 @@
 		9DCF9BB51DBA4286007518CC /* Network */ = {
 			isa = PBXGroup;
 			children = (
-				9DCF9BB61DBA4286007518CC /* BaseWeatherService.swift */,
 				9DCF9BB71DBA4286007518CC /* WeatherServiceProtocol.swift */,
+				9DCF9BB61DBA4286007518CC /* BaseWeatherService.swift */,
 				9DCF9BB81DBA4286007518CC /* YahooWeatherService.swift */,
 			);
 			path = Network;
@@ -203,6 +222,7 @@
 			children = (
 				9D6A14551DBA85AD00715576 /* ProviderProtocol.swift */,
 				9DCF9BBA1DBA4286007518CC /* WeatherProvider.swift */,
+				9DBD3ED91DBA90C200ED8FEA /* YahooWeatherProvider.swift */,
 			);
 			path = Providers;
 			sourceTree = "<group>";
@@ -287,16 +307,20 @@
 				9DCF9BC71DBA4286007518CC /* WeatherProvider.swift in Sources */,
 				9DCF9BBE1DBA4286007518CC /* WeatherMO+CoreDataClass.swift in Sources */,
 				9D6A14541DBA83EA00715576 /* CoreDataProtocol.swift in Sources */,
+				9DBD3EDD1DBA939C00ED8FEA /* ParserProtocol.swift in Sources */,
 				9DCF9BC51DBA4286007518CC /* WeatherServiceProtocol.swift in Sources */,
 				9DCF9BC21DBA4286007518CC /* WeatherModel.xcdatamodeld in Sources */,
 				9D859B1B1D9E32A80055F23A /* AppDelegate.swift in Sources */,
+				9DBD3EDA1DBA90C200ED8FEA /* YahooWeatherProvider.swift in Sources */,
 				9D859B051D9E31D30055F23A /* ForecastViewController.swift in Sources */,
 				9DCF9BBF1DBA4286007518CC /* ForecastMO+CoreDataProperties.swift in Sources */,
+				9DBD3EE11DBA961900ED8FEA /* YahooWeatherParser.swift in Sources */,
 				9DCF9BC01DBA4286007518CC /* LocationMO+CoreDataProperties.swift in Sources */,
 				9DCF9BC61DBA4286007518CC /* YahooWeatherService.swift in Sources */,
 				9DCF9BBD1DBA4286007518CC /* LocationMO+CoreDataClass.swift in Sources */,
 				9DCF9BC41DBA4286007518CC /* BaseWeatherService.swift in Sources */,
 				9D6A14561DBA85AD00715576 /* ProviderProtocol.swift in Sources */,
+				9DBD3EDF1DBA95A800ED8FEA /* BaseParser.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

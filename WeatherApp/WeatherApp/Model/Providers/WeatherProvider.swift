@@ -9,19 +9,27 @@
 import Foundation
 import CoreData
 
-class WeatherProvider {
+class WeatherProvider : ProviderProtocol {
     
-    private let service = BaseWeatherService.weatherService(service: .Yahoo)
-    private let coreData = CoreDataManager()
+    class func weatherProvider(forService service : SupportedServices, location: String) -> WeatherProvider {
+        switch service {
+        case .Yahoo:
+            return YahooWeatherProvider(location: location)
+        }
+    }
+    
     private let locationName: String
+    var service: WeatherServiceProtocol?
+    var coreData: CoreDataProtocol?
+    var parser: ParserProtocol?
     
     init(location: String) {
         self.locationName = location
-        requestData()
+        self.requestData()
     }
     
     func requestData()  {
-        service.retrieveWeatherInfo(locationName: "Voronezh") {[weak self](result) in
+        service?.retrieveWeatherInfo(locationName: "Voronezh") {[weak self](result) in
             DispatchQueue.main.async {
                 switch (result) {
                 case .success(let data):
@@ -41,7 +49,12 @@ class WeatherProvider {
     
     func parse(data: Data) throws -> LocationMO {
         let json = try JSONSerialization.jsonObject(with: data)
-        return try LocationMO.createOrUpdate(fromJson: json, inContext: coreData.persistentContainer.viewContext)
+        if let context = coreData?.persistentContainer.viewContext {
+            let location = try LocationMO.createOrUpdate(forLocationWithName: self.locationName, inContext: context)
+            try parser?.populate(object: location, withJson: json)
+            return location
+        }
+        throw ProviderError(errorCode: .CommonError)
     }
 }
 

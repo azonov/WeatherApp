@@ -13,7 +13,7 @@ class YahooWeatherService: BaseWeatherService {
     override func urlRequestUrlForLocation(withName name : String) -> URL? {
         let requestString = "select * from weather.forecast where woeid in (select woeid from geo.places(1) where text=\"\(name)\")  and u=\'\(Temperature.celsius.rawValue)\'"
         guard let encodedString = requestString.addingPercentEncoding(withAllowedCharacters: .urlHostAllowed) else {
-            return nil;
+            return nil
         }
         let endpoint = "https://query.yahooapis.com/v1/public/yql?q=\(encodedString)&format=json"
         return URL(string: endpoint)

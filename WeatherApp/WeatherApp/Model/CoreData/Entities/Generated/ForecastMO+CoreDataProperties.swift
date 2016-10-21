@@ -12,7 +12,7 @@ import CoreData
 extension ForecastMO {
 
     @nonobjc public class func fetchRequest() -> NSFetchRequest<ForecastMO> {
-        return NSFetchRequest<ForecastMO>(entityName: "Forecast");
+        return NSFetchRequest<ForecastMO>(entityName: "Forecast")
     }
 
     @NSManaged public var date: NSDate

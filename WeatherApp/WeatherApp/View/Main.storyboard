@@ -9,7 +9,7 @@
         <!--Погода ВГУ-->
         <scene sceneID="4a9-xd-kna">
             <objects>
-                <tableViewController id="fpe-W9-VpP" sceneMemberID="viewController">
+                <tableViewController id="fpe-W9-VpP" customClass="ForecastViewController" customModule="WeatherApp" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="static" style="grouped" separatorStyle="default" rowHeight="44" sectionHeaderHeight="18" sectionFooterHeight="18" id="r63-Vs-hvp">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -45,14 +45,12 @@
                                             <nil key="highlightedColor"/>
                                         </label>
                                     </subviews>
-                                    <constraints>
-                                        <constraint firstAttribute="width" constant="140" id="Yvt-TW-KtX"/>
-                                    </constraints>
                                 </stackView>
                             </subviews>
                             <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                             <constraints>
                                 <constraint firstItem="flF-o4-BGQ" firstAttribute="top" secondItem="u1z-1A-qQg" secondAttribute="top" id="Hie-7f-wwh"/>
+                                <constraint firstAttribute="trailing" secondItem="flF-o4-BGQ" secondAttribute="trailing" id="SNP-n5-AfJ"/>
                                 <constraint firstItem="flF-o4-BGQ" firstAttribute="leading" secondItem="u1z-1A-qQg" secondAttribute="leading" id="bu2-um-Bpp"/>
                                 <constraint firstAttribute="bottom" secondItem="flF-o4-BGQ" secondAttribute="bottom" id="y0T-zX-nNf"/>
                             </constraints>
@@ -61,7 +59,7 @@
                             <tableViewSection headerTitle="Суббота" id="raa-HU-L34">
                                 <cells>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" textLabel="fGR-Jb-y3y" detailTextLabel="OdT-7d-Hvy" style="IBUITableViewCellStyleValue1" id="57i-eh-ERf">
-                                        <rect key="frame" x="0.0" y="248.5" width="375" height="44"/>
+                                        <rect key="frame" x="0.0" y="249" width="375" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="57i-eh-ERf" id="fJh-9Y-3NS">
                                             <frame key="frameInset" width="375" height="43"/>
@@ -89,7 +87,7 @@
                             <tableViewSection headerTitle="Воскресенье" id="6Hx-n3-yvp">
                                 <cells>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" textLabel="fvG-9M-m04" detailTextLabel="o9E-qF-oeT" style="IBUITableViewCellStyleValue1" id="QnO-a4-KK8">
-                                        <rect key="frame" x="0.0" y="348.5" width="375" height="44"/>
+                                        <rect key="frame" x="0.0" y="349" width="375" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="QnO-a4-KK8" id="ryo-Yj-EPt">
                                             <frame key="frameInset" width="375" height="43"/>
@@ -117,7 +115,7 @@
                             <tableViewSection headerTitle="Понедельник" id="byQ-BM-NvH">
                                 <cells>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" textLabel="Czj-xj-5Qh" detailTextLabel="7Lx-IL-MIt" style="IBUITableViewCellStyleValue1" id="HYD-G1-3fr">
-                                        <rect key="frame" x="0.0" y="448.5" width="375" height="44"/>
+                                        <rect key="frame" x="0.0" y="449" width="375" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="HYD-G1-3fr" id="s1G-E2-rqh">
                                             <frame key="frameInset" width="375" height="43"/>
@@ -145,7 +143,7 @@
                             <tableViewSection headerTitle="Вторник" id="SoJ-5V-WI4">
                                 <cells>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" textLabel="PsH-gd-lLY" detailTextLabel="bzv-0X-SOY" style="IBUITableViewCellStyleValue1" id="PGG-d7-f0b">
-                                        <rect key="frame" x="0.0" y="548.5" width="375" height="44"/>
+                                        <rect key="frame" x="0.0" y="549" width="375" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="PGG-d7-f0b" id="hco-2q-c4f">
                                             <frame key="frameInset" width="375" height="43"/>
@@ -173,7 +171,7 @@
                             <tableViewSection headerTitle="Среда" id="lgx-53-rZT">
                                 <cells>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" textLabel="dX4-gv-JaB" detailTextLabel="qKc-Qz-Qyj" style="IBUITableViewCellStyleValue1" id="L8x-CX-b8V">
-                                        <rect key="frame" x="0.0" y="648.5" width="375" height="44"/>
+                                        <rect key="frame" x="0.0" y="649" width="375" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="L8x-CX-b8V" id="55q-Uc-HC1">
                                             <frame key="frameInset" width="375" height="43"/>
@@ -201,7 +199,7 @@
                             <tableViewSection headerTitle="Четверг" id="UFP-as-s1M">
                                 <cells>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" textLabel="OiW-u5-aVd" detailTextLabel="xzf-AZ-ocP" style="IBUITableViewCellStyleValue1" id="06M-me-PTp">
-                                        <rect key="frame" x="0.0" y="748.5" width="375" height="44"/>
+                                        <rect key="frame" x="0.0" y="749" width="375" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="06M-me-PTp" id="Rvy-nS-Esl">
                                             <frame key="frameInset" width="375" height="43"/>
@@ -229,7 +227,7 @@
                             <tableViewSection headerTitle="Пятница" id="OTU-wE-9zt">
                                 <cells>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" textLabel="rze-vO-F2q" detailTextLabel="JxL-so-jQa" style="IBUITableViewCellStyleValue1" id="HRc-Mq-hVJ">
-                                        <rect key="frame" x="0.0" y="848.5" width="375" height="44"/>
+                                        <rect key="frame" x="0.0" y="849" width="375" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="HRc-Mq-hVJ" id="Tyb-gg-neg">
                                             <frame key="frameInset" width="375" height="43"/>
@@ -261,10 +259,14 @@
                         </connections>
                     </tableView>
                     <navigationItem key="navigationItem" title="Погода ВГУ" id="6cB-92-oJV"/>
+                    <connections>
+                        <outlet property="currentTemperature" destination="Z0N-mb-gPP" id="GUJ-tT-FoU"/>
+                        <outlet property="temperaturesRange" destination="A0I-fS-iVw" id="EqZ-an-lYw"/>
+                    </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="VJX-MX-9h8" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="381.60000000000002" y="220.83958020989508"/>
+            <point key="canvasLocation" x="140" y="238"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="26S-kt-6S8">

@@ -116,11 +116,10 @@
 		9D859B151D9E32600055F23A /* Model */ = {
 			isa = PBXGroup;
 			children = (
-				9DBD3EDB1DBA935300ED8FEA /* Parser */,
-				9DCF9BA51DBA4286007518CC /* CoreData */,
-				9DCF9BB31DBA4286007518CC /* Helpers */,
-				9DCF9BB51DBA4286007518CC /* Network */,
 				9DCF9BB91DBA4286007518CC /* Providers */,
+				9DCF9BB51DBA4286007518CC /* Network */,
+				9DCF9BA51DBA4286007518CC /* CoreData */,
+				9DBD3EDB1DBA935300ED8FEA /* Parser */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -204,12 +203,14 @@
 			children = (
 				9DCF9BB41DBA4286007518CC /* Units.swift */,
 			);
-			path = Helpers;
+			name = Helpers;
+			path = ../Helpers;
 			sourceTree = "<group>";
 		};
 		9DCF9BB51DBA4286007518CC /* Network */ = {
 			isa = PBXGroup;
 			children = (
+				9DCF9BB31DBA4286007518CC /* Helpers */,
 				9DCF9BB71DBA4286007518CC /* WeatherServiceProtocol.swift */,
 				9DCF9BB61DBA4286007518CC /* BaseWeatherService.swift */,
 				9DCF9BB81DBA4286007518CC /* YahooWeatherService.swift */,

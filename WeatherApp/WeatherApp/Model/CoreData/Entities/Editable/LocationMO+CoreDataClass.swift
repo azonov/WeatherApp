@@ -16,14 +16,15 @@ public class LocationMO: NSManagedObject {
         return "Location"
     }
     
-    class func createOrUpdate(withName name: String, inContext context: NSManagedObjectContext) throws -> LocationMO {
+    class func createOrUpdate(fromJson json: Any, inContext context: NSManagedObjectContext) throws -> LocationMO {
         let request = NSFetchRequest<LocationMO>(entityName: entityName())
-        request.predicate = NSPredicate(format: "name = %@", name)
+        let locationName = try getLocationName(fromJson: json)
+        request.predicate = NSPredicate(format: "name = %@", locationName)
         let location: LocationMO
         let results = try context.fetch(request)
         if results.count == 0 {
             location = LocationMO(context: context)
-            location.name = name
+            location.name = locationName
         }else {
             if let result = results.first {
                 location = result
@@ -31,10 +32,35 @@ public class LocationMO: NSManagedObject {
                 throw WeatherCoreDataError(errorCode: .CreationError)
             }
         }
-        if context.hasChanges {
-            try context.save()
-        }
+        location.weather = try WeatherMO.create(fromJson: getChannel(fromJson: json), inContext: context)
         return location;
+    }
+    
+    class func getLocationName(fromJson json: Any) throws -> String {
+        let channelJson = try getChannel(fromJson: json)
+        guard let locationJson = channelJson["location"] as? [String: Any] else {
+            throw WeatherCoreDataError(errorCode: .ParsingError)
+        }
+        guard let city = locationJson["city"] as? String else {
+            throw WeatherCoreDataError(errorCode: .ParsingError)
+        }
+        return city;
+    }
+    
+    class func getChannel(fromJson json: Any) throws -> [String: Any] {
+        guard let jsonDictionary = json as? [String: Any] else {
+            throw WeatherCoreDataError(errorCode: .ParsingError)
+        }
+        guard let queryJson = jsonDictionary["query"] as? [String: Any] else {
+            throw WeatherCoreDataError(errorCode: .ParsingError)
+        }
+        guard let resultsJson = queryJson["results"] as? [String: Any] else {
+            throw WeatherCoreDataError(errorCode: .ParsingError)
+        }
+        guard let channelJson = resultsJson["channel"] as? [String: Any] else {
+            throw WeatherCoreDataError(errorCode: .ParsingError)
+        }
+        return channelJson
     }
     
 }

@@ -11,6 +11,7 @@ import Foundation
 public struct WeatherCoreDataError: Error {
     enum Code: Int {
         case CreationError = -7000
+        case ParsingError  = -7001
     }
     
     let errorCode: Code

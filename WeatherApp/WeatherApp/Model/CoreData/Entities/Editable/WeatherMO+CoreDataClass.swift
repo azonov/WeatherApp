@@ -12,35 +12,28 @@ import CoreData
 
 public class WeatherMO: NSManagedObject {
     
-    func populate(json: Any) {
-        guard let jsonDictionary = json as? [String: Any] else {
-            return
+    class func create(fromJson json: Any, inContext context: NSManagedObjectContext) throws -> WeatherMO {
+        let weather = WeatherMO(context: context)
+        try weather.populate(json: json, withContext: context)
+        if context.hasChanges {
+            try context.save()
         }
-        guard let query = jsonDictionary["query"] as? [String: Any] else {
-            return
-        }
-        guard let results = query["results"] as? [String: Any] else {
-            return
-        }
-        guard let channel = results["channel"] as? [String: Any] else {
-            return
-        }
-        guard let location = channel["location"] as? [String: Any] else {
-            return
-        }
-        guard let city = location["city"] as? String else {
-            return
+        return weather;
+    }
+    
+    private func populate(json: Any, withContext context: NSManagedObjectContext) throws {
+        guard let channel = json as? [String: Any] else {
+            throw WeatherCoreDataError(errorCode: .ParsingError)
         }
         guard let item = channel["item"] as? [String: Any] else {
-            return
+            throw WeatherCoreDataError(errorCode: .ParsingError)
         }
         guard let forecastsArray = item["forecast"] as? [[String : String]] else {
-            return;
+            throw WeatherCoreDataError(errorCode: .ParsingError)
         }
-//        for forecastDictionary in forecastsArray {
-//            if let forecastObject = Forecast(json: forecastDictionary) {
-//                self.forecasts.append(forecastObject)
-//            }
-//        }
+        var forecasts = [ForecastMO]()
+        for forecastDictionary in forecastsArray {
+            forecasts.append(try ForecastMO.create(fromJson: forecastDictionary, inContext: context))
+        }
     }
 }

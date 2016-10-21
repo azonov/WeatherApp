@@ -39,10 +39,9 @@ class WeatherProvider {
         }
     }
     
-    func parse(data: Data) throws -> WeatherProtocol {
-        let _ = try JSONSerialization.jsonObject(with: data)
-        let _ = try LocationMO.createOrUpdate(withName: "Voronezh", inContext: coreData.persistentContainer.viewContext)
-        throw ProviderError(errorCode: .CommonError)
+    func parse(data: Data) throws -> LocationMO {
+        let json = try JSONSerialization.jsonObject(with: data)
+        return try LocationMO.createOrUpdate(fromJson: json, inContext: coreData.persistentContainer.viewContext)
     }
 }
 

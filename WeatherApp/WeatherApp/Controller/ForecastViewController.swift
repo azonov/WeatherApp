@@ -13,7 +13,7 @@ class ForecastViewController: UITableViewController {
     @IBOutlet weak var currentTemperature: UILabel!
     @IBOutlet weak var temperaturesRange: UILabel!
     
-    private lazy var provider = WeatherProvider(location: "Voronezh")
+    private var provider = WeatherProvider(location: "Voronezh")
     
     override func viewDidLoad() {
         super.viewDidLoad()

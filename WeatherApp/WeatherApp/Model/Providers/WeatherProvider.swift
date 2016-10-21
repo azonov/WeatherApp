@@ -27,8 +27,7 @@ class WeatherProvider {
                 case .success(let data):
                     do {
                         if let data = data as? Data {
-                            guard let weather = try self?.parse(data: data) else { return }
-                            
+                            guard let _ = try self?.parse(data: data) else { return }
                         }
                     }catch {
                         
@@ -41,23 +40,9 @@ class WeatherProvider {
     }
     
     func parse(data: Data) throws -> WeatherProtocol {
-        let json = try JSONSerialization.jsonObject(with: data)
-        let context = coreData.persistentContainer.viewContext
-        let request = NSFetchRequest<LocationMO>(entityName: "Location")
-        request.predicate = NSPredicate(format: "name = %@", self.locationName)
-        let location: LocationMO?
-        do {
-            let results = try context.fetch(request)
-            if results.count == 0 {
-                location = LocationMO(context: context)
-                location?.name = self.locationName
-            }else {
-                location = results.first
-            }
-        }catch {
-            print("\(error)")
-        }
-        coreData.saveContext()
-        throw WeatherServiceError(errorCode: .JSONParsingFailed)
+        let _ = try JSONSerialization.jsonObject(with: data)
+        let _ = try LocationMO.createOrUpdate(withName: "Voronezh", inContext: coreData.persistentContainer.viewContext)
+        throw ProviderError(errorCode: .CommonError)
     }
 }
+

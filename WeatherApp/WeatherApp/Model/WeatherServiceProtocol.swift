@@ -36,7 +36,7 @@ protocol WeatherProtocol {
     var forecasts : [ForecastProtocol] { get }
 }
 
-typealias WeatherCompletionHandler = (Result<WeatherProtocol>) -> Void
+typealias WeatherCompletionHandler = (Result<Any>) -> Void
 
 protocol WeatherServiceProtocol {
     func retrieveWeatherInfo(locationName: String, completionHandler: @escaping WeatherCompletionHandler)

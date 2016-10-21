@@ -18,13 +18,4 @@ class YahooWeatherService: BaseWeatherService {
         let endpoint = "https://query.yahooapis.com/v1/public/yql?q=\(encodedString)&format=json"
         return URL(string: endpoint)
     }
-    
-    override func parse(data: Data) throws -> WeatherProtocol {
-        let json = try JSONSerialization.jsonObject(with: data)
-        if let weather = Weather(json: json) {
-            return weather
-        }else {
-            throw WeatherServiceError(errorCode: .JSONParsingFailed)
-        }
-    }
 }

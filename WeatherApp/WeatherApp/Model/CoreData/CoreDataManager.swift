@@ -18,7 +18,7 @@ class CoreDataManager {
          создает и возвращает контейнер. Свойство является optional, для 
          обработки ошибок при создании контейнера.
          */
-        let container = NSPersistentContainer(name: "Model")
+        let container = NSPersistentContainer(name: "WeatherModel")
         container.loadPersistentStores(completionHandler: { (storeDescription, error) in
             if let error = error as NSError? {
                 fatalError("Unresolved error \(error), \(error.userInfo)")

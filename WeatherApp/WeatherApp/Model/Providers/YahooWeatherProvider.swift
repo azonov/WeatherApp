@@ -14,5 +14,6 @@ class YahooWeatherProvider: WeatherProvider {
         self.service = BaseWeatherService.weatherService(service: .Yahoo)
         self.coreData = CoreDataManager()
         self.parser = BaseParser.parser(service: .Yahoo)
+        self.requestData()
     }
 }

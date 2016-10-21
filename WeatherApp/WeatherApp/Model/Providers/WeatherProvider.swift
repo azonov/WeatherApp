@@ -25,11 +25,10 @@ class WeatherProvider : ProviderProtocol {
     
     init(location: String) {
         self.locationName = location
-        self.requestData()
     }
     
     func requestData()  {
-        service?.retrieveWeatherInfo(locationName: "Voronezh") {[weak self](result) in
+        service?.retrieveWeatherInfo(locationName: locationName) {[weak self](result) in
             DispatchQueue.main.async {
                 switch (result) {
                 case .success(let data):

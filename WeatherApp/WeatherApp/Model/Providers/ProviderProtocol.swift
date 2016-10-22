@@ -16,6 +16,18 @@ public struct ProviderError: Error {
     let errorCode: Code
 }
 
-protocol ProviderProtocol {
+protocol ForecastObjectProtocol {
+    var dateString: String { get }
+    var temperatureString: String { get }
+    var textString: String { get }
     
+}
+
+protocol ProviderProtocol {
+    func numberOfObjects() -> Int
+    func object(atIndex index: Int) -> ForecastObjectProtocol?
+}
+
+protocol ProviderDelegate: NSObjectProtocol {
+    func contentDidChange(withForecasts forecasts: [ForecastObjectProtocol]?);
 }

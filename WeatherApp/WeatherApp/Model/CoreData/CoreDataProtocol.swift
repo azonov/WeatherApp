@@ -19,6 +19,6 @@ public struct WeatherCoreDataError: Error {
 }
 
 protocol CoreDataProtocol {
-    func saveContext()
+    func save (context: NSManagedObjectContext) throws
     var persistentContainer: NSPersistentContainer  { get }
 }

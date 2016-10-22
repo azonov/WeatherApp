@@ -28,15 +28,9 @@ class CoreDataManager : CoreDataProtocol {
     }()
     
     // MARK: - Core Data Saving support
-    func saveContext () {
-        let context = persistentContainer.viewContext
+    func save (context: NSManagedObjectContext) throws {
         if context.hasChanges {
-            do {
-                try context.save()
-            } catch {
-                let nserror = error as NSError
-                fatalError("Unresolved error \(nserror), \(nserror.userInfo)")
-            }
+            try context.save()
         }
     }
 }

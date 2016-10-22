@@ -12,7 +12,7 @@ extension ForecastMO: ForecastObjectProtocol {
     
     private static let formatter: DateFormatter = {
         let formatter = DateFormatter()
-        formatter.dateFormat = "dd MMM YYY"
+        formatter.dateFormat = "EEE"
         return formatter
     }()
     
@@ -24,7 +24,7 @@ extension ForecastMO: ForecastObjectProtocol {
     
     var temperatureString: String {
         get {
-            return String((high + low) / 2)
+            return "\((high + low) / 2)°C (от \(low)° до \(high)°)"
         }
     }
     var textString: String {

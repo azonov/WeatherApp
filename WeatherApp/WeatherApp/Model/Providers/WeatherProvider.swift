@@ -64,6 +64,7 @@ class WeatherProvider : NSObject, ProviderProtocol, NSFetchedResultsControllerDe
         }catch {
             print(error)
         }
+        requestData()
     }
     
     private func requestData()  {

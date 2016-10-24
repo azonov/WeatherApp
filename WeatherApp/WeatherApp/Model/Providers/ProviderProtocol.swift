@@ -29,5 +29,5 @@ protocol ProviderProtocol {
 }
 
 protocol ProviderDelegate: NSObjectProtocol {
-    func contentDidChange(withForecasts forecasts: [ForecastObjectProtocol]?);
+    func contentDidChange(withForecasts forecasts: [ForecastObjectProtocol]?)
 }

@@ -52,8 +52,8 @@ class WeatherProvider : NSObject, ProviderProtocol, NSFetchedResultsControllerDe
         self.parser = parser
         super.init()
         let context = self.coreData.persistentContainer.viewContext
-        let fetchRequest = NSFetchRequest<ForecastMO>(entityName: "Forecast")
-        fetchRequest.sortDescriptors = [NSSortDescriptor(key: "date", ascending: true)]
+        let fetchRequest: NSFetchRequest<ForecastMO> = ForecastMO.fetchRequest()
+        fetchRequest.sortDescriptors = [NSSortDescriptor(key: ForecastMO.Attributes.date, ascending: true)]
         fetchResultsController = NSFetchedResultsController(fetchRequest: fetchRequest,
                                                             managedObjectContext: context,
                                                             sectionNameKeyPath: nil,

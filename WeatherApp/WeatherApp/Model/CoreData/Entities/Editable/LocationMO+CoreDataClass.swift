@@ -12,6 +12,14 @@ import CoreData
 
 public class LocationMO: NSManagedObject {
     
+    struct Attributes {
+        static let name = "name"
+    }
+    
+    struct Relationships {
+        static let weather = "weather"
+    }
+    
     class func createOrUpdate(forLocationWithName locationName: String, inContext context: NSManagedObjectContext) throws -> LocationMO {
         let request: NSFetchRequest<LocationMO> = LocationMO.fetchRequest()
         request.predicate = NSPredicate(format: "name = %@", locationName)

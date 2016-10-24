@@ -12,6 +12,15 @@ import CoreData
 
 public class WeatherMO: NSManagedObject {
     
+    struct Attributes {
+        
+    }
+    
+    struct Relationships {
+        static let forecasts = "forecasts"
+        static let location = "location"
+    }
+    
     class func create(inContext context: NSManagedObjectContext) throws -> WeatherMO {
         let weather = WeatherMO(context: context)
         return weather

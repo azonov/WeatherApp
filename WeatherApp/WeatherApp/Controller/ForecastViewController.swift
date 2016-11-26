@@ -10,11 +10,16 @@ import UIKit
 
 class ForecastViewController: UITableViewController, ProviderDelegate {
     
-    private lazy var provider = WeatherProvider.weatherProvider(forService: .Yahoo, location: "Voronezh")
+    internal lazy var provider = WeatherProvider.weatherProvider(forService: .Yahoo, location: "Voronezh")
     
     override func viewDidLoad() {
         super.viewDidLoad()
         provider.delegate = self
+    }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        self.navigationController?.delegate = self
     }
     
     //MARK: ProviderDelegate
@@ -43,5 +48,25 @@ class ForecastViewController: UITableViewController, ProviderDelegate {
     override func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
         return provider.object(atIndex: section)?.dateString ?? ""
     }
+    
+    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        let storyboard = self.storyboard!
+        guard let detailViewController = storyboard.instantiateViewController(withIdentifier: "DAY_FORECAST_ID") as? DayForecastViewController else {
+            fatalError("Something went wrong")
+        }
+        
+        self.navigationController?.pushViewController(detailViewController, animated: true)
+    }
+}
+
+extension ForecastViewController: UINavigationControllerDelegate {
+    
+    func navigationController(_ navigationController: UINavigationController, willShow viewController: UIViewController, animated: Bool) {
+        if let dayForecastVC = viewController as? DayForecastViewController {
+            let forecast = provider.object(atIndex: tableView.indexPathForSelectedRow!.section)
+            dayForecastVC.forecast = forecast
+        }
+    }
+    
 }
 

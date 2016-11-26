@@ -9,39 +9,27 @@
 import UIKit
 import CoreLocation
 
-class ForecastViewController: UITableViewController, ProviderDelegate, CLLocationManagerDelegate {
+class ForecastViewController: UITableViewController, LocationDelegate, ProviderDelegate {
     
     var city: String?
-    var locationManager: CLLocationManager!
+    var locationManager: CustomLocationManager!
     private lazy var provider = WeatherProvider.weatherProvider(forService: .Yahoo, location: "Voronezh")
     
     override func viewDidLoad() {
         super.viewDidLoad()
         provider.delegate = self
-        
-        locationManager = CLLocationManager()
+        locationManager = CustomLocationManager()
         locationManager.delegate = self
-        locationManager.desiredAccuracy = kCLLocationAccuracyKilometer
-        locationManager.requestWhenInUseAuthorization()
-        locationManager.startUpdatingLocation()
     }
-    
-    func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation])
-    {
-        let locationArray = locations as NSArray
-        let location = locationArray.lastObject as! CLLocation
-        CLGeocoder().reverseGeocodeLocation(location, completionHandler: {(placemarks, error) -> Void in
-            
-            if (placemarks?.count)! > 0 {
-                let pm = placemarks![0]
-                self.city = pm.locality!
-            }
-        })
-        manager.stopUpdatingLocation()
-    }
+   
     //MARK: ProviderDelegate
     func contentDidChange(withForecasts forecasts: [ForecastObjectProtocol]?) {
         self.tableView.reloadData()
+    }
+    //MARK: LocationDelegate
+    func locationDidChange(city newCity: String?){
+        city = newCity
+        provider = WeatherProvider.weatherProvider(forService: .Yahoo, location: city!)
     }
     
     //MARK: UITableViewDataSourse

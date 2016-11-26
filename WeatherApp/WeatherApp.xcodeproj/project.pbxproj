@@ -32,6 +32,7 @@
 		9DCF9BC51DBA4286007518CC /* WeatherServiceProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DCF9BB71DBA4286007518CC /* WeatherServiceProtocol.swift */; };
 		9DCF9BC61DBA4286007518CC /* YahooWeatherService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DCF9BB81DBA4286007518CC /* YahooWeatherService.swift */; };
 		9DCF9BC71DBA4286007518CC /* WeatherProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DCF9BBA1DBA4286007518CC /* WeatherProvider.swift */; };
+		AEC316EB1DE969B8006F9EE8 /* CustomLocationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = AEC316EA1DE969B8006F9EE8 /* CustomLocationManager.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -61,6 +62,7 @@
 		9DCF9BB71DBA4286007518CC /* WeatherServiceProtocol.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WeatherServiceProtocol.swift; sourceTree = "<group>"; };
 		9DCF9BB81DBA4286007518CC /* YahooWeatherService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = YahooWeatherService.swift; sourceTree = "<group>"; };
 		9DCF9BBA1DBA4286007518CC /* WeatherProvider.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WeatherProvider.swift; sourceTree = "<group>"; };
+		AEC316EA1DE969B8006F9EE8 /* CustomLocationManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomLocationManager.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -120,6 +122,7 @@
 				9DCF9BB51DBA4286007518CC /* Network */,
 				9DCF9BA51DBA4286007518CC /* CoreData */,
 				9DBD3EDB1DBA935300ED8FEA /* Parser */,
+				AEC316EA1DE969B8006F9EE8 /* CustomLocationManager.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -312,6 +315,7 @@
 				9DCF9BC51DBA4286007518CC /* WeatherServiceProtocol.swift in Sources */,
 				9D42497B1DBB8E0A00125040 /* ForecastMO+ForecastObjectProtocol.swift in Sources */,
 				9DCF9BC21DBA4286007518CC /* WeatherModel.xcdatamodeld in Sources */,
+				AEC316EB1DE969B8006F9EE8 /* CustomLocationManager.swift in Sources */,
 				9D859B1B1D9E32A80055F23A /* AppDelegate.swift in Sources */,
 				9D859B051D9E31D30055F23A /* ForecastViewController.swift in Sources */,
 				9DCF9BBF1DBA4286007518CC /* ForecastMO+CoreDataProperties.swift in Sources */,

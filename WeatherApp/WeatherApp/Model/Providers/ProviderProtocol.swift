@@ -31,3 +31,7 @@ protocol ProviderProtocol {
 protocol ProviderDelegate: NSObjectProtocol {
     func contentDidChange(withForecasts forecasts: [ForecastObjectProtocol]?)
 }
+
+protocol LocationDelegate: NSObjectProtocol {
+    func locationDidChange(city: String?)
+}

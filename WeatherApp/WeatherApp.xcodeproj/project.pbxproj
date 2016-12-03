@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0802D1FF1DE9DCAF00054425 /* DayForecastViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0802D1FE1DE9DCAF00054425 /* DayForecastViewController.swift */; };
+		0802D2021DE9DEE700054425 /* WeatherState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0802D2011DE9DEE700054425 /* WeatherState.swift */; };
 		9D42497B1DBB8E0A00125040 /* ForecastMO+ForecastObjectProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D42497A1DBB8E0A00125040 /* ForecastMO+ForecastObjectProtocol.swift */; };
 		9D6A14541DBA83EA00715576 /* CoreDataProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D6A14531DBA83EA00715576 /* CoreDataProtocol.swift */; };
 		9D6A14561DBA85AD00715576 /* ProviderProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D6A14551DBA85AD00715576 /* ProviderProtocol.swift */; };
@@ -35,6 +37,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		0802D1FE1DE9DCAF00054425 /* DayForecastViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DayForecastViewController.swift; sourceTree = "<group>"; };
+		0802D2011DE9DEE700054425 /* WeatherState.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WeatherState.swift; sourceTree = "<group>"; };
 		9D42497A1DBB8E0A00125040 /* ForecastMO+ForecastObjectProtocol.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "ForecastMO+ForecastObjectProtocol.swift"; path = "../../../Providers/ForecastMO+ForecastObjectProtocol.swift"; sourceTree = "<group>"; };
 		9D6A14531DBA83EA00715576 /* CoreDataProtocol.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CoreDataProtocol.swift; sourceTree = "<group>"; };
 		9D6A14551DBA85AD00715576 /* ProviderProtocol.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProviderProtocol.swift; sourceTree = "<group>"; };
@@ -74,6 +78,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		0802D2001DE9DED900054425 /* Weather */ = {
+			isa = PBXGroup;
+			children = (
+				0802D2011DE9DEE700054425 /* WeatherState.swift */,
+			);
+			name = Weather;
+			sourceTree = "<group>";
+		};
 		9D859AF61D9E31D30055F23A = {
 			isa = PBXGroup;
 			children = (
@@ -116,6 +128,7 @@
 		9D859B151D9E32600055F23A /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				0802D2001DE9DED900054425 /* Weather */,
 				9DCF9BB91DBA4286007518CC /* Providers */,
 				9DCF9BB51DBA4286007518CC /* Network */,
 				9DCF9BA51DBA4286007518CC /* CoreData */,
@@ -136,6 +149,7 @@
 			isa = PBXGroup;
 			children = (
 				9D859B041D9E31D30055F23A /* ForecastViewController.swift */,
+				0802D1FE1DE9DCAF00054425 /* DayForecastViewController.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -307,12 +321,14 @@
 				9DCF9BBB1DBA4286007518CC /* CoreDataManager.swift in Sources */,
 				9DCF9BC71DBA4286007518CC /* WeatherProvider.swift in Sources */,
 				9DCF9BBE1DBA4286007518CC /* WeatherMO+CoreDataClass.swift in Sources */,
+				0802D2021DE9DEE700054425 /* WeatherState.swift in Sources */,
 				9D6A14541DBA83EA00715576 /* CoreDataProtocol.swift in Sources */,
 				9DBD3EDD1DBA939C00ED8FEA /* ParserProtocol.swift in Sources */,
 				9DCF9BC51DBA4286007518CC /* WeatherServiceProtocol.swift in Sources */,
 				9D42497B1DBB8E0A00125040 /* ForecastMO+ForecastObjectProtocol.swift in Sources */,
 				9DCF9BC21DBA4286007518CC /* WeatherModel.xcdatamodeld in Sources */,
 				9D859B1B1D9E32A80055F23A /* AppDelegate.swift in Sources */,
+				0802D1FF1DE9DCAF00054425 /* DayForecastViewController.swift in Sources */,
 				9D859B051D9E31D30055F23A /* ForecastViewController.swift in Sources */,
 				9DCF9BBF1DBA4286007518CC /* ForecastMO+CoreDataProperties.swift in Sources */,
 				9DBD3EE11DBA961900ED8FEA /* YahooWeatherParser.swift in Sources */,

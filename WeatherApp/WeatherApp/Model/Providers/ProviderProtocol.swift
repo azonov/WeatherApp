@@ -20,7 +20,7 @@ protocol ForecastObjectProtocol {
     var dateString: String { get }
     var temperatureString: String { get }
     var textString: String { get }
-    
+    var averageTemperature: Int { get }
 }
 
 protocol ProviderProtocol {

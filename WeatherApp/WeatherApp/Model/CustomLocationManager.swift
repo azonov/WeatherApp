@@ -25,17 +25,18 @@ class CustomLocationManager:NSObject, CLLocationManagerDelegate {
     
     func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation])
     {
-        let locationArray = locations as NSArray
-        let location = locationArray.lastObject as! CLLocation
-        CLGeocoder().reverseGeocodeLocation(location, completionHandler: {(placemarks, error) -> Void in
+        let location = locations.last
+        CLGeocoder().reverseGeocodeLocation(location!, completionHandler: {(placemarks, error) -> Void in
             
             if (placemarks?.count)! > 0 {
                 let pm = placemarks![0]
                 self.city = pm.locality!
                 self.delegate?.locationDidChange(city: self.city)
-                manager.stopUpdatingLocation()
+              //  locationManager = nil
             }
         })
+        
+        self.locationManager.stopUpdatingLocation();
     }
     
 }

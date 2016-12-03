@@ -13,11 +13,10 @@ class ForecastViewController: UITableViewController, LocationDelegate, ProviderD
     
     var city: String?
     var locationManager: CustomLocationManager!
-    private lazy var provider = WeatherProvider.weatherProvider(forService: .Yahoo, location: "Voronezh")
+    var provider: WeatherProvider?
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        provider.delegate = self
         locationManager = CustomLocationManager()
         locationManager.delegate = self
     }
@@ -30,11 +29,15 @@ class ForecastViewController: UITableViewController, LocationDelegate, ProviderD
     func locationDidChange(city newCity: String?){
         city = newCity
         provider = WeatherProvider.weatherProvider(forService: .Yahoo, location: city!)
+        provider!.delegate = self
     }
     
     //MARK: UITableViewDataSourse
     override func numberOfSections(in tableView: UITableView) -> Int {
-        return provider.numberOfObjects()
+        if provider == nil{
+            return 0
+        }
+        return provider!.numberOfObjects()
     }
     
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -43,7 +46,7 @@ class ForecastViewController: UITableViewController, LocationDelegate, ProviderD
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = UITableViewCell(style: .value1, reuseIdentifier: "ForecastCell")
-        if let forecast = provider.object(atIndex: indexPath.section) {
+        if let forecast = provider!.object(atIndex: indexPath.section) {
             cell.textLabel?.text = forecast.textString
             cell.detailTextLabel?.text = forecast.temperatureString
         }
@@ -51,7 +54,7 @@ class ForecastViewController: UITableViewController, LocationDelegate, ProviderD
     }
     
     override func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
-        return provider.object(atIndex: section)?.dateString ?? ""
+        return provider!.object(atIndex: section)?.dateString ?? ""
     }
 }
 

@@ -11,6 +11,8 @@ import UIKit
 class TodayViewCell: UITableViewCell {
 
     @IBOutlet weak var temperature: UILabel!
+    @IBOutlet weak var tempDistinction: UILabel!
+    @IBOutlet weak var info: UILabel!
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code

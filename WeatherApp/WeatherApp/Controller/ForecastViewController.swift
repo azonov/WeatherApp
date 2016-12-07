@@ -42,7 +42,8 @@ class ForecastViewController: UITableViewController, ProviderDelegate {
             if let forecast = provider.object(atIndex: indexPath.section) {
                 
                 cell.temperature.text = String(forecast.averageTemperature) + "℃"
-                
+                cell.tempDistinction.text = String(forecast.temperatureString)
+                cell.info.text = String(forecast.textString)
             }
             return cell
         }
@@ -69,9 +70,16 @@ class ForecastViewController: UITableViewController, ProviderDelegate {
     }
     override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         if indexPath.row == 0 && indexPath.section == 0 {
-            return 135
+            return 110
         }
         return 45
+    }
+    
+    override func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
+        if section == 0 {
+        return 0
+        }
+        return 20
     }
 }
 

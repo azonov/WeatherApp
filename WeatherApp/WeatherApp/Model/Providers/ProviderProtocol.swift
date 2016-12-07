@@ -19,6 +19,7 @@ public struct ProviderError: Error {
 protocol ForecastObjectProtocol {
     var dateString: String { get }
     var temperatureString: String { get }
+    var temperatureDistinction: String { get }
     var textString: String { get }
     var averageTemperature: Int { get }
 }

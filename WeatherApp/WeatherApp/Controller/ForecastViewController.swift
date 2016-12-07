@@ -37,6 +37,17 @@ class ForecastViewController: UITableViewController, ProviderDelegate {
     }
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        if indexPath.row == 0 && indexPath.section == 0 {
+            let cell = tableView.dequeueReusableCell(withIdentifier: "TodayCell") as! TodayViewCell
+            if let forecast = provider.object(atIndex: indexPath.section) {
+                
+                cell.temperature.text = String(forecast.averageTemperature) + "℃"
+                cell.tempDistinction.text = String(forecast.temperatureDistinction)
+                cell.info.text = String(forecast.textString)
+            }
+            return cell
+        }
+        
         let cell = UITableViewCell(style: .value1, reuseIdentifier: "ForecastCell")
         if let forecast = provider.object(atIndex: indexPath.section) {
             cell.textLabel?.text = forecast.textString
@@ -56,6 +67,19 @@ class ForecastViewController: UITableViewController, ProviderDelegate {
         }
         
         self.navigationController?.pushViewController(detailViewController, animated: true)
+    }
+    override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        if indexPath.row == 0 && indexPath.section == 0 {
+            return 110
+        }
+        return 45
+    }
+    
+    override func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
+        if section == 0 {
+        return 0
+        }
+        return 20
     }
 }
 

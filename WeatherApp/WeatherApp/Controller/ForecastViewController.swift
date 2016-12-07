@@ -42,7 +42,7 @@ class ForecastViewController: UITableViewController, ProviderDelegate {
             if let forecast = provider.object(atIndex: indexPath.section) {
                 
                 cell.temperature.text = String(forecast.averageTemperature) + "℃"
-                cell.tempDistinction.text = String(forecast.temperatureString)
+                cell.tempDistinction.text = String(forecast.temperatureDistinction)
                 cell.info.text = String(forecast.textString)
             }
             return cell

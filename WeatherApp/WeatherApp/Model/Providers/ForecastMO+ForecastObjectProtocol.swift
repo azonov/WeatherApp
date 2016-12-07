@@ -27,6 +27,11 @@ extension ForecastMO: ForecastObjectProtocol {
             return "\(averageTemperature)°C (от \(low)° до \(high)°)"
         }
     }
+    var temperatureDistinction: String {
+        get {
+            return "от \(low)° до \(high)°"
+        }
+    }
     var textString: String {
         get {
             return text

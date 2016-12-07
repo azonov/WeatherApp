@@ -8,7 +8,7 @@
 
 import UIKit
 
-internal let TEMPERATURE_PLACEHOLDER = "Unknown1"
+internal let TEMPERATURE_PLACEHOLDER = "Unknown"
 
 public class DayForecastViewController: UIViewController {
     @IBOutlet weak var temperatureLabel: UILabel!

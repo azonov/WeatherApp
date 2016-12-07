@@ -37,6 +37,16 @@ class ForecastViewController: UITableViewController, ProviderDelegate {
     }
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        if indexPath.row == 0 && indexPath.section == 0 {
+            let cell = tableView.dequeueReusableCell(withIdentifier: "TodayCell") as! TodayViewCell
+            if let forecast = provider.object(atIndex: indexPath.section) {
+                
+                cell.temperature.text = String(forecast.averageTemperature) + "℃"
+                
+            }
+            return cell
+        }
+        
         let cell = UITableViewCell(style: .value1, reuseIdentifier: "ForecastCell")
         if let forecast = provider.object(atIndex: indexPath.section) {
             cell.textLabel?.text = forecast.textString

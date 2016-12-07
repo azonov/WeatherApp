@@ -57,6 +57,12 @@ class ForecastViewController: UITableViewController, ProviderDelegate {
         
         self.navigationController?.pushViewController(detailViewController, animated: true)
     }
+    override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        if indexPath.row == 0 && indexPath.section == 0 {
+            return 135
+        }
+        return 45
+    }
 }
 
 extension ForecastViewController: UINavigationControllerDelegate {

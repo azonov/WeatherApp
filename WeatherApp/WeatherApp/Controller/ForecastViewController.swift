@@ -11,9 +11,12 @@ import CoreLocation
 
 class ForecastViewController: UITableViewController, LocationDelegate, ProviderDelegate {
     
+    
     var city: String?
     var locationManager: CustomLocationManager!
     var provider: WeatherProvider?
+    
+    var cityDescriptionIndex = 0
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -28,6 +31,18 @@ class ForecastViewController: UITableViewController, LocationDelegate, ProviderD
     //MARK: LocationDelegate
     func locationDidChange(city newCity: String?){
         city = newCity
+        
+        if self.navigationItem.title?.characters.last == ")"{
+            
+            let end = self.navigationItem.title?.index((self.navigationItem.title?.startIndex)!, offsetBy: cityDescriptionIndex)
+            let temp = self.navigationItem.title?.substring(to: end!)
+            self.navigationItem.title = temp! + " (" + city! + ")"
+        }
+        else {
+            cityDescriptionIndex = (self.navigationItem.title?.characters.count)!
+            self.navigationItem.title = self.navigationItem.title! + " (" + city! + ")"
+        }
+        
         provider = WeatherProvider.weatherProvider(forService: .Yahoo, location: city!)
         provider!.delegate = self
     }

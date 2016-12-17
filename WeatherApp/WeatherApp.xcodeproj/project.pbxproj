@@ -32,6 +32,8 @@
 		9DCF9BC51DBA4286007518CC /* WeatherServiceProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DCF9BB71DBA4286007518CC /* WeatherServiceProtocol.swift */; };
 		9DCF9BC61DBA4286007518CC /* YahooWeatherService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DCF9BB81DBA4286007518CC /* YahooWeatherService.swift */; };
 		9DCF9BC71DBA4286007518CC /* WeatherProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DCF9BBA1DBA4286007518CC /* WeatherProvider.swift */; };
+		AE07BE421DE9650B00D80DE3 /* LocationAndMeasureCofiguration.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE07BE411DE9650B00D80DE3 /* LocationAndMeasureCofiguration.swift */; };
+		AE7B62E51DE0242F00D32D4B /* SettingsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE7B62E41DE0242F00D32D4B /* SettingsTableViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -61,6 +63,8 @@
 		9DCF9BB71DBA4286007518CC /* WeatherServiceProtocol.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WeatherServiceProtocol.swift; sourceTree = "<group>"; };
 		9DCF9BB81DBA4286007518CC /* YahooWeatherService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = YahooWeatherService.swift; sourceTree = "<group>"; };
 		9DCF9BBA1DBA4286007518CC /* WeatherProvider.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WeatherProvider.swift; sourceTree = "<group>"; };
+		AE07BE411DE9650B00D80DE3 /* LocationAndMeasureCofiguration.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LocationAndMeasureCofiguration.swift; sourceTree = "<group>"; };
+		AE7B62E41DE0242F00D32D4B /* SettingsTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingsTableViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -120,6 +124,7 @@
 				9DCF9BB51DBA4286007518CC /* Network */,
 				9DCF9BA51DBA4286007518CC /* CoreData */,
 				9DBD3EDB1DBA935300ED8FEA /* Parser */,
+				AE07BE411DE9650B00D80DE3 /* LocationAndMeasureCofiguration.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -136,6 +141,7 @@
 			isa = PBXGroup;
 			children = (
 				9D859B041D9E31D30055F23A /* ForecastViewController.swift */,
+				AE7B62E41DE0242F00D32D4B /* SettingsTableViewController.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -315,11 +321,13 @@
 				9D859B1B1D9E32A80055F23A /* AppDelegate.swift in Sources */,
 				9D859B051D9E31D30055F23A /* ForecastViewController.swift in Sources */,
 				9DCF9BBF1DBA4286007518CC /* ForecastMO+CoreDataProperties.swift in Sources */,
+				AE7B62E51DE0242F00D32D4B /* SettingsTableViewController.swift in Sources */,
 				9DBD3EE11DBA961900ED8FEA /* YahooWeatherParser.swift in Sources */,
 				9DCF9BC01DBA4286007518CC /* LocationMO+CoreDataProperties.swift in Sources */,
 				9DCF9BC61DBA4286007518CC /* YahooWeatherService.swift in Sources */,
 				9DCF9BBD1DBA4286007518CC /* LocationMO+CoreDataClass.swift in Sources */,
 				9DCF9BC41DBA4286007518CC /* BaseWeatherService.swift in Sources */,
+				AE07BE421DE9650B00D80DE3 /* LocationAndMeasureCofiguration.swift in Sources */,
 				9D6A14561DBA85AD00715576 /* ProviderProtocol.swift in Sources */,
 				9DBD3EDF1DBA95A800ED8FEA /* BaseParser.swift in Sources */,
 			);

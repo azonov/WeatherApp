@@ -8,7 +8,7 @@
 
 import Foundation
 
-enum Temperature: Character {
+enum Temperature: String {
     case celsius = "c"
     case fahrenheit = "f"
 }

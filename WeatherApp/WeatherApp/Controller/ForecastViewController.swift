@@ -10,7 +10,9 @@ import UIKit
 
 class ForecastViewController: UITableViewController, ProviderDelegate {
     
-    internal lazy var provider = WeatherProvider.weatherProvider(forService: .Yahoo, location: "Voronezh")
+    var city = "Voronezh"
+    
+    internal lazy var provider: WeatherProvider  = WeatherProvider.weatherProvider(forService: .Yahoo, location: self.city)
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -25,6 +27,22 @@ class ForecastViewController: UITableViewController, ProviderDelegate {
     //MARK: ProviderDelegate
     func contentDidChange(withForecasts forecasts: [ForecastObjectProtocol]?) {
         self.tableView.reloadData()
+    }
+    
+    @IBAction func selectedCity(segue:UIStoryboardSegue) {
+        if let cityPickerViewController = segue.source as? CityPickerViewController,
+            let selectedCity = cityPickerViewController.selectedCity {
+            city = selectedCity
+            provider = WeatherProvider.weatherProvider(forService: .Yahoo, location: self.city)
+        }
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "PickCity" {
+            if let cityPickerViewController = segue.destination as? CityPickerViewController {
+                cityPickerViewController.selectedCity = city
+            }
+        }
     }
     
     //MARK: UITableViewDataSourse

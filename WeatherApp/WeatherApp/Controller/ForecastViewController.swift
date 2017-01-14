@@ -7,26 +7,49 @@
 //
 
 import UIKit
+import CoreLocation
 
-class ForecastViewController: UITableViewController, ProviderDelegate {
+class ForecastViewController: UITableViewController, LocationDelegate, ProviderDelegate {
     
-    var city = "Voronezh"
+    var city: String?
+    var locationManager: CustomLocationManager!
+    var provider: WeatherProvider?
+    
+    var cityDescriptionIndex = 0
     
     internal lazy var provider: WeatherProvider  = WeatherProvider.weatherProvider(forService: .Yahoo, location: self.city)
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        provider.delegate = self
+        locationManager = CustomLocationManager()
+        locationManager.delegate = self
     }
     
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
         self.navigationController?.delegate = self
     }
-    
     //MARK: ProviderDelegate
     func contentDidChange(withForecasts forecasts: [ForecastObjectProtocol]?) {
         self.tableView.reloadData()
+    }
+    //MARK: LocationDelegate
+    func locationDidChange(city newCity: String?){
+        city = newCity
+        
+        if self.navigationItem.title?.characters.last == ")"{
+            
+            let end = self.navigationItem.title?.index((self.navigationItem.title?.startIndex)!, offsetBy: cityDescriptionIndex)
+            let temp = self.navigationItem.title?.substring(to: end!)
+            self.navigationItem.title = temp! + " (" + city! + ")"
+        }
+        else {
+            cityDescriptionIndex = (self.navigationItem.title?.characters.count)!
+            self.navigationItem.title = self.navigationItem.title! + " (" + city! + ")"
+        }
+        
+        provider = WeatherProvider.weatherProvider(forService: .Yahoo, location: city!)
+        provider!.delegate = self
     }
     
     @IBAction func selectedCity(segue:UIStoryboardSegue) {
@@ -47,7 +70,10 @@ class ForecastViewController: UITableViewController, ProviderDelegate {
     
     //MARK: UITableViewDataSourse
     override func numberOfSections(in tableView: UITableView) -> Int {
-        return provider.numberOfObjects()
+        if provider == nil{
+            return 0
+        }
+        return provider!.numberOfObjects()
     }
     
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -61,7 +87,7 @@ class ForecastViewController: UITableViewController, ProviderDelegate {
         }
         
         let cell = UITableViewCell(style: .value1, reuseIdentifier: "ForecastCell")
-        if let forecast = provider.object(atIndex: indexPath.section) {
+        if let forecast = provider!.object(atIndex: indexPath.section) {
             cell.textLabel?.text = forecast.textString
             cell.detailTextLabel?.text = forecast.temperatureString
         }
@@ -69,7 +95,7 @@ class ForecastViewController: UITableViewController, ProviderDelegate {
     }
     
     override func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
-        return provider.object(atIndex: section)?.dateString ?? ""
+        return provider!.object(atIndex: section)?.dateString ?? ""
     }
     
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {

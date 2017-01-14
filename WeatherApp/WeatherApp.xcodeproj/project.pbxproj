@@ -38,6 +38,8 @@
 		9DCF9BC51DBA4286007518CC /* WeatherServiceProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DCF9BB71DBA4286007518CC /* WeatherServiceProtocol.swift */; };
 		9DCF9BC61DBA4286007518CC /* YahooWeatherService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DCF9BB81DBA4286007518CC /* YahooWeatherService.swift */; };
 		9DCF9BC71DBA4286007518CC /* WeatherProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DCF9BBA1DBA4286007518CC /* WeatherProvider.swift */; };
+		AE07BE421DE9650B00D80DE3 /* LocationAndMeasureCofiguration.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE07BE411DE9650B00D80DE3 /* LocationAndMeasureCofiguration.swift */; };
+		AE7B62E51DE0242F00D32D4B /* SettingsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE7B62E41DE0242F00D32D4B /* SettingsTableViewController.swift */; };
 		AEC316EB1DE969B8006F9EE8 /* CustomLocationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = AEC316EA1DE969B8006F9EE8 /* CustomLocationManager.swift */; };
 /* End PBXBuildFile section */
 
@@ -74,6 +76,8 @@
 		9DCF9BB71DBA4286007518CC /* WeatherServiceProtocol.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WeatherServiceProtocol.swift; sourceTree = "<group>"; };
 		9DCF9BB81DBA4286007518CC /* YahooWeatherService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = YahooWeatherService.swift; sourceTree = "<group>"; };
 		9DCF9BBA1DBA4286007518CC /* WeatherProvider.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WeatherProvider.swift; sourceTree = "<group>"; };
+		AE07BE411DE9650B00D80DE3 /* LocationAndMeasureCofiguration.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LocationAndMeasureCofiguration.swift; sourceTree = "<group>"; };
+		AE7B62E41DE0242F00D32D4B /* SettingsTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingsTableViewController.swift; sourceTree = "<group>"; };
 		AEC316EA1DE969B8006F9EE8 /* CustomLocationManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomLocationManager.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -152,6 +156,7 @@
 				9DCF9BB51DBA4286007518CC /* Network */,
 				9DCF9BA51DBA4286007518CC /* CoreData */,
 				9DBD3EDB1DBA935300ED8FEA /* Parser */,
+				AE07BE411DE9650B00D80DE3 /* LocationAndMeasureCofiguration.swift */,
 				AEC316EA1DE969B8006F9EE8 /* CustomLocationManager.swift */,
 			);
 			path = Model;
@@ -169,6 +174,7 @@
 			isa = PBXGroup;
 			children = (
 				9D859B041D9E31D30055F23A /* ForecastViewController.swift */,
+				AE7B62E41DE0242F00D32D4B /* SettingsTableViewController.swift */,
 				0802D1FE1DE9DCAF00054425 /* DayForecastViewController.swift */,
 				843CFBA91E200469008463E6 /* CityPickerViewController.swift */,
 				6D1F340D1DF84D0600714FD6 /* TodayViewCell.swift */,
@@ -358,11 +364,13 @@
 				0802D1FF1DE9DCAF00054425 /* DayForecastViewController.swift in Sources */,
 				9D859B051D9E31D30055F23A /* ForecastViewController.swift in Sources */,
 				9DCF9BBF1DBA4286007518CC /* ForecastMO+CoreDataProperties.swift in Sources */,
+				AE7B62E51DE0242F00D32D4B /* SettingsTableViewController.swift in Sources */,
 				9DBD3EE11DBA961900ED8FEA /* YahooWeatherParser.swift in Sources */,
 				9DCF9BC01DBA4286007518CC /* LocationMO+CoreDataProperties.swift in Sources */,
 				9DCF9BC61DBA4286007518CC /* YahooWeatherService.swift in Sources */,
 				9DCF9BBD1DBA4286007518CC /* LocationMO+CoreDataClass.swift in Sources */,
 				9DCF9BC41DBA4286007518CC /* BaseWeatherService.swift in Sources */,
+				AE07BE421DE9650B00D80DE3 /* LocationAndMeasureCofiguration.swift in Sources */,
 				9D6A14561DBA85AD00715576 /* ProviderProtocol.swift in Sources */,
 				9DBD3EDF1DBA95A800ED8FEA /* BaseParser.swift in Sources */,
 				84E7C9A81E2970790027489E /* OpenWeatherMapService.swift in Sources */,

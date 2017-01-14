@@ -10,6 +10,7 @@ import Foundation
 
 enum SupportedServices {
     case Yahoo
+    case OpenWeatherMap
 }
 
 class BaseWeatherService : WeatherServiceProtocol {
@@ -20,6 +21,8 @@ class BaseWeatherService : WeatherServiceProtocol {
         switch service {
         case .Yahoo:
             return YahooWeatherService()
+        case .OpenWeatherMap:
+            return OpenWeatherMapService()
         }
     }
     

@@ -24,13 +24,22 @@ extension ForecastMO: ForecastObjectProtocol {
     
     var temperatureString: String {
         get {
-            return "\((high + low) / 2)°C (от \(low)° до \(high)°)"
+            return "\(averageTemperature)°C (от \(low)° до \(high)°)"
+        }
+    }
+    var temperatureDistinction: String {
+        get {
+            return "от \(low)° до \(high)°"
         }
     }
     var textString: String {
         get {
             return text
         }
+    }
+    
+    var averageTemperature: Int {
+        return Int(high + low) / 2
     }
     
 }

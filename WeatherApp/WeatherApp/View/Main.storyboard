@@ -281,6 +281,38 @@
             </objects>
             <point key="canvasLocation" x="-794" y="221"/>
         </scene>
+        <!--Day Forecast View Controller-->
+        <scene sceneID="2bb-WB-UwE">
+            <objects>
+                <viewController storyboardIdentifier="DAY_FORECAST_ID" id="ZTx-lV-GPx" customClass="DayForecastViewController" customModule="WeatherApp" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="PWx-es-0BU"/>
+                        <viewControllerLayoutGuide type="bottom" id="iG1-oa-CnA"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="1Nx-jw-j5K">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ige-VO-s4U">
+                                <fontDescription key="fontDescription" type="system" pointSize="24"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="Ige-VO-s4U" firstAttribute="centerX" secondItem="1Nx-jw-j5K" secondAttribute="centerX" id="Ahj-tc-3kl"/>
+                            <constraint firstItem="Ige-VO-s4U" firstAttribute="centerY" secondItem="1Nx-jw-j5K" secondAttribute="centerY" id="xGq-eO-kqr"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="temperatureLabel" destination="Ige-VO-s4U" id="6fc-Xu-2Lu"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="CTK-Va-EI9" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2916" y="221"/>
+        </scene>
     </scenes>
     <resources>
         <image name="menu.png" width="28" height="20"/>

@@ -14,7 +14,10 @@ class BaseParser : ParserProtocol {
         switch service {
         case .Yahoo:
             return YahooWeatherParser()
+        case .OpenWeatherMap:
+            return YahooWeatherParser() //there is no OpenWeatherMap parser yet
         }
+        
     }
     
     func populate(object: LocationMO, withJson json:Any) throws {

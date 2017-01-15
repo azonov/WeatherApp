@@ -18,6 +18,11 @@ class WeatherProvider : NSObject, ProviderProtocol, NSFetchedResultsControllerDe
                                    service: BaseWeatherService.weatherService(service: .Yahoo),
                                    coreData: CoreDataManager(),
                                    parser: BaseParser.parser(service: .Yahoo))
+        case .OpenWeatherMap:
+            return WeatherProvider(location: location,
+                                   service: BaseWeatherService.weatherService(service: .OpenWeatherMap),
+                                   coreData: CoreDataManager(),
+                                   parser: BaseParser.parser(service: .OpenWeatherMap))
         }
     }
     

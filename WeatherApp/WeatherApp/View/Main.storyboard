@@ -94,6 +94,11 @@
                         </connections>
                     </tableView>
                     <navigationItem key="navigationItem" title="Погода ВГУ" id="6cB-92-oJV">
+                        <barButtonItem key="leftBarButtonItem" image="menu.png" id="S1f-Ac-tPw">
+                            <connections>
+                                <segue destination="o4x-SM-8SE" kind="show" identifier="PickCity" id="dLr-YQ-JyE"/>
+                            </connections>
+                        </barButtonItem>
                         <barButtonItem key="rightBarButtonItem" systemItem="edit" id="env-MF-TrI">
                             <connections>
                                 <segue destination="0ue-ce-6yX" kind="presentation" id="GKx-TS-RXn"/>
@@ -104,6 +109,48 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="VJX-MX-9h8" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="140" y="221"/>
+        </scene>
+        <!--Choose City-->
+        <scene sceneID="FEY-Q4-99r">
+            <objects>
+                <tableViewController id="o4x-SM-8SE" customClass="CityPickerViewController" customModule="WeatherApp" customModuleProvider="target" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" id="dDl-me-Gi1">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <prototypes>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="CityCell" textLabel="T8y-xt-pW7" style="IBUITableViewCellStyleDefault" id="4XG-IO-WBG">
+                                <rect key="frame" x="0.0" y="92" width="375" height="44"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="4XG-IO-WBG" id="ZNZ-IO-c20">
+                                    <frame key="frameInset" width="375" height="43"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="Title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="T8y-xt-pW7">
+                                            <frame key="frameInset" minX="15" width="345" height="43"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="0.0"/>
+                                            <nil key="textColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                    </subviews>
+                                </tableViewCellContentView>
+                                <connections>
+                                    <segue destination="jPY-95-BGL" kind="unwind" identifier="SaveSelectedCity" unwindAction="selectedCityWithSegue:" id="cFL-U9-uVu"/>
+                                </connections>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="o4x-SM-8SE" id="kd0-av-atV"/>
+                            <outlet property="delegate" destination="o4x-SM-8SE" id="JeP-0b-7vV"/>
+                        </connections>
+                    </tableView>
+                    <navigationItem key="navigationItem" title="Choose City" id="nXt-9q-V6u"/>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="n5p-PL-cTf" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <exit id="jPY-95-BGL" userLabel="Exit" sceneMemberID="exit"/>
+            </objects>
+            <point key="canvasLocation" x="1116" y="-507"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="cHm-ub-TDp">
@@ -119,7 +166,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="MQM-VY-x66" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="954" y="221"/>
+            <point key="canvasLocation" x="1114" y="221"/>
         </scene>
         <!--Настройки-->
         <scene sceneID="rWt-P3-TW6">
@@ -136,7 +183,7 @@
                                         <rect key="frame" x="0.0" y="120" width="375" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="FdN-SH-cfK" id="Jfa-Ih-ZjM">
-                                            <frame key="frameInset" width="375" height="44"/>
+                                            <frame key="frameInset" width="375" height="43"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" adjustsFontSizeToFit="NO" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="8jQ-LM-Yp7">
@@ -216,7 +263,7 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="a5w-Yu-YMw" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <exit id="9It-LF-MUs" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
-            <point key="canvasLocation" x="1709.5999999999999" y="220.83958020989508"/>
+            <point key="canvasLocation" x="2030" y="221"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="26S-kt-6S8">
@@ -232,7 +279,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="eHv-io-GbL" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-570" y="221"/>
+            <point key="canvasLocation" x="-794" y="221"/>
         </scene>
     </scenes>
     <resources>

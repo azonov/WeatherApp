@@ -17,8 +17,6 @@ class ForecastViewController: UITableViewController, LocationDelegate, ProviderD
     
     var cityDescriptionIndex = 0
     
-    internal lazy var provider: WeatherProvider  = WeatherProvider.weatherProvider(forService: .Yahoo, location: self.city)
-    
     override func viewDidLoad() {
         super.viewDidLoad()
         locationManager = CustomLocationManager()
@@ -55,8 +53,7 @@ class ForecastViewController: UITableViewController, LocationDelegate, ProviderD
     @IBAction func selectedCity(segue:UIStoryboardSegue) {
         if let cityPickerViewController = segue.source as? CityPickerViewController,
             let selectedCity = cityPickerViewController.selectedCity {
-            city = selectedCity
-            provider = WeatherProvider.weatherProvider(forService: .Yahoo, location: self.city)
+            locationDidChange(city: selectedCity)
         }
     }
     
@@ -123,7 +120,7 @@ class ForecastViewController: UITableViewController, LocationDelegate, ProviderD
     
     func firstCell(indexPath: IndexPath) -> TodayViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: firstCellIdentifier) as! TodayViewCell
-        if let forecast = provider.object(atIndex: indexPath.section) {
+        if let forecast = provider!.object(atIndex: indexPath.section) {
             
             cell.temperature.text = String(forecast.averageTemperature) + "℃"
             cell.tempDistinction.text = String(forecast.temperatureDistinction)
@@ -137,7 +134,7 @@ extension ForecastViewController: UINavigationControllerDelegate {
     
     func navigationController(_ navigationController: UINavigationController, willShow viewController: UIViewController, animated: Bool) {
         if let dayForecastVC = viewController as? DayForecastViewController {
-            let forecast = provider.object(atIndex: tableView.indexPathForSelectedRow!.section)
+            let forecast = provider!.object(atIndex: tableView.indexPathForSelectedRow!.section)
             dayForecastVC.forecast = forecast
         }
     }

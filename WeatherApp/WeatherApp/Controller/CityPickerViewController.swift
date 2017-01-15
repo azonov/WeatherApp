@@ -19,7 +19,9 @@ class CityPickerViewController: UITableViewController {
         super.viewDidLoad()
         cities = ["Moscow", "St. Petersburg", "Vladivostok", "Volgograd", "Voronezh", "Yekaterinburg", "Kaliningrad", "Kazan'", "Krasnodar", "Novosibirsk", "Omsk", "Rostov-na-Donu", "Samara", "Yaroslavl'", "Chelyabinsk"]
         if let city = selectedCity {
-            selectedCityIndex = cities.index(of: city)!
+            if cities.contains(city) {
+                selectedCityIndex = cities.index(of: city)!
+            }
         }
     }
 

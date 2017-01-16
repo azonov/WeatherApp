@@ -70,7 +70,8 @@ class ForecastViewController: UITableViewController, LocationDelegate, ProviderD
         if provider == nil{
             return 0
         }
-        return provider!.numberOfObjects()
+        //+1 необъодимо для добавления еще одной (информационной) ячейки в таблицу
+        return provider!.numberOfObjects() + 1
     }
     
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -80,6 +81,12 @@ class ForecastViewController: UITableViewController, LocationDelegate, ProviderD
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         if indexPath.row == 0 && indexPath.section == 0 {
             let cell = firstCell(indexPath: indexPath)
+            return cell
+        }
+        
+        if indexPath[0] == (provider?.numberOfObjects())! {
+            let cell = UITableViewCell(style: .value1, reuseIdentifier: "ForecastCell")
+            cell.detailTextLabel?.text = self.city! + ". Powered by " + (provider?.ServiceName)!
             return cell
         }
         

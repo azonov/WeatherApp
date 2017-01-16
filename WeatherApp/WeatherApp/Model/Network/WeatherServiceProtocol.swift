@@ -39,5 +39,6 @@ protocol WeatherProtocol {
 typealias WeatherCompletionHandler = (Result<Any>) -> Void
 
 protocol WeatherServiceProtocol {
+    var ServiceName : String { get }
     func retrieveWeatherInfo(locationName: String, completionHandler: @escaping WeatherCompletionHandler)
 }

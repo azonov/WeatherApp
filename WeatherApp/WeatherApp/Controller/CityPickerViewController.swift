@@ -68,6 +68,14 @@ class CityPickerViewController: UITableViewController {
         cell?.accessoryType = .checkmark
     }
     
+    override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCellEditingStyle, forRowAt indexPath: IndexPath) {
+        if (editingStyle == UITableViewCellEditingStyle.delete) {
+            cities.remove(at: indexPath.row)
+            let indexPaths = [indexPath]
+            tableView.deleteRows(at: indexPaths as [IndexPath], with: UITableViewRowAnimation.fade)
+        }
+    }
+    
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "SaveSelectedCity" {
             if let cell = sender as? UITableViewCell {

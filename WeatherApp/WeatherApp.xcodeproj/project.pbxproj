@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		0802D1FF1DE9DCAF00054425 /* DayForecastViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0802D1FE1DE9DCAF00054425 /* DayForecastViewController.swift */; };
 		0802D2021DE9DEE700054425 /* WeatherState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0802D2011DE9DEE700054425 /* WeatherState.swift */; };
+		4BC88CB51E2E775000BC0596 /* OpenWeatherParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BC88CB41E2E775000BC0596 /* OpenWeatherParser.swift */; };
 		6D1F340E1DF84D0600714FD6 /* TodayViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D1F340D1DF84D0600714FD6 /* TodayViewCell.swift */; };
 		843CFBA81E1FFFEF008463E6 /* menu.png in Resources */ = {isa = PBXBuildFile; fileRef = 843CFBA71E1FFFEF008463E6 /* menu.png */; };
 		843CFBAA1E200469008463E6 /* CityPickerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 843CFBA91E200469008463E6 /* CityPickerViewController.swift */; };
@@ -46,6 +47,7 @@
 /* Begin PBXFileReference section */
 		0802D1FE1DE9DCAF00054425 /* DayForecastViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DayForecastViewController.swift; sourceTree = "<group>"; };
 		0802D2011DE9DEE700054425 /* WeatherState.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WeatherState.swift; sourceTree = "<group>"; };
+		4BC88CB41E2E775000BC0596 /* OpenWeatherParser.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OpenWeatherParser.swift; sourceTree = "<group>"; };
 		6D1F340D1DF84D0600714FD6 /* TodayViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TodayViewCell.swift; sourceTree = "<group>"; };
 		843CFBA71E1FFFEF008463E6 /* menu.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = menu.png; sourceTree = "<group>"; };
 		843CFBA91E200469008463E6 /* CityPickerViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CityPickerViewController.swift; sourceTree = "<group>"; };
@@ -188,6 +190,7 @@
 				9DBD3EDC1DBA939C00ED8FEA /* ParserProtocol.swift */,
 				9DBD3EDE1DBA95A800ED8FEA /* BaseParser.swift */,
 				9DBD3EE01DBA961900ED8FEA /* YahooWeatherParser.swift */,
+				4BC88CB41E2E775000BC0596 /* OpenWeatherParser.swift */,
 			);
 			path = Parser;
 			sourceTree = "<group>";
@@ -374,6 +377,7 @@
 				9D6A14561DBA85AD00715576 /* ProviderProtocol.swift in Sources */,
 				9DBD3EDF1DBA95A800ED8FEA /* BaseParser.swift in Sources */,
 				84E7C9A81E2970790027489E /* OpenWeatherMapService.swift in Sources */,
+				4BC88CB51E2E775000BC0596 /* OpenWeatherParser.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

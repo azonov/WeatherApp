@@ -7,13 +7,37 @@
 //
 
 import UIKit
+import MapKit
 
-class CityPickerViewController: UITableViewController {
+class CityPickerViewController: UITableViewController, CLLocationManagerDelegate {
 
     var cities:[String]!
     
     var selectedCity:String? = nil
     var selectedCityIndex:Int? = nil
+    
+    ///LESHCH
+    var resultSearchController:UISearchController? = nil
+    let locationManager = CLLocationManager()
+    
+    func locationManager(_ manager: CLLocationManager, didChangeAuthorization status: CLAuthorizationStatus) {
+        if status == .authorizedWhenInUse {
+            locationManager.requestLocation()
+        }
+    }
+    
+    func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
+        if let location = locations.first {
+            let span = MKCoordinateSpanMake(0.05, 0.05)
+            let region = MKCoordinateRegion(center: location.coordinate, span: span)
+        }
+    }
+    
+    func locationManager(_ manager: CLLocationManager, didFailWithError error: Error) {
+        print("error:: \(error)")
+    }
+    ///LESHCH
+
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -23,6 +47,27 @@ class CityPickerViewController: UITableViewController {
                 selectedCityIndex = cities.index(of: city)!
             }
         }
+        
+        ///LESHCH
+        locationManager.delegate = self
+        locationManager.desiredAccuracy = kCLLocationAccuracyBest
+        locationManager.requestWhenInUseAuthorization()
+        locationManager.requestLocation()
+        let locationSearchTable = storyboard!.instantiateViewController(withIdentifier: "LocationSearchTable") as! LocationSearchTable
+        
+        resultSearchController = UISearchController(searchResultsController: locationSearchTable)
+        resultSearchController?.searchResultsUpdater = locationSearchTable
+        
+        let searchBar = resultSearchController!.searchBar
+        tableView.tableHeaderView = searchBar
+        //searchBar.sizeToFit()
+        //searchBar.placeholder = "Search with MKLocSearchReq"
+        //navigationItem.titleView = resultSearchController?.searchBar
+        resultSearchController?.hidesNavigationBarDuringPresentation = false
+        resultSearchController?.dimsBackgroundDuringPresentation = true
+        definesPresentationContext = true
+        ///LESHCH
+
     }
 
     override func didReceiveMemoryWarning() {

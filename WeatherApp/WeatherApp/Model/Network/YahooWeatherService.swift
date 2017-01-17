@@ -16,6 +16,7 @@ class YahooWeatherService: BaseWeatherService {
             return nil
         }
         let endpoint = "https://query.yahooapis.com/v1/public/yql?q=\(encodedString)&format=json"
+        serviceName = "Yahoo"
         return URL(string: endpoint)
     }
 }

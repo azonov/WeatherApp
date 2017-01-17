@@ -11,6 +11,14 @@ import CoreData
 
 class WeatherProvider : NSObject, ProviderProtocol, NSFetchedResultsControllerDelegate {
 
+    var ServiceName: String
+        {
+        get
+        {
+            return service.ServiceName
+        }
+    }
+    
     class func weatherProvider(forService service : SupportedServices, location: String) -> WeatherProvider {
         switch service {
         case .Yahoo:

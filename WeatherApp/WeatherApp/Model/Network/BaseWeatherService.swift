@@ -15,6 +15,16 @@ enum SupportedServices {
 
 class BaseWeatherService : WeatherServiceProtocol {
     
+    var serviceName: String = "unknown service"
+    
+    var ServiceName: String
+        {
+        get
+        {
+            return serviceName;
+        }
+    }
+    
     static let session = URLSession(configuration: URLSessionConfiguration.default)
     
     class func weatherService(service : SupportedServices) -> BaseWeatherService {

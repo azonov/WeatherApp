@@ -8,9 +8,11 @@
 
 import Foundation
 
-enum SupportedServices {
-    case Yahoo
-    case OpenWeatherMap
+enum SupportedServices: String {
+    case Yahoo = "Yahoo"
+    case OpenWeatherMap = "OpenWeatherMap"
+    
+    static let allValues = [Yahoo, OpenWeatherMap]
 }
 
 class BaseWeatherService : WeatherServiceProtocol {

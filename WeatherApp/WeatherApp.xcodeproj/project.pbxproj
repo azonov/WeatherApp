@@ -42,6 +42,7 @@
 		AE07BE421DE9650B00D80DE3 /* LocationAndMeasureCofiguration.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE07BE411DE9650B00D80DE3 /* LocationAndMeasureCofiguration.swift */; };
 		AE7B62E51DE0242F00D32D4B /* SettingsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE7B62E41DE0242F00D32D4B /* SettingsTableViewController.swift */; };
 		AEC316EB1DE969B8006F9EE8 /* CustomLocationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = AEC316EA1DE969B8006F9EE8 /* CustomLocationManager.swift */; };
+		CDADCA8B1E2FC77400FC19BB /* LocationSearchTable.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDADCA8A1E2FC77400FC19BB /* LocationSearchTable.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -81,6 +82,7 @@
 		AE07BE411DE9650B00D80DE3 /* LocationAndMeasureCofiguration.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LocationAndMeasureCofiguration.swift; sourceTree = "<group>"; };
 		AE7B62E41DE0242F00D32D4B /* SettingsTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingsTableViewController.swift; sourceTree = "<group>"; };
 		AEC316EA1DE969B8006F9EE8 /* CustomLocationManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomLocationManager.swift; sourceTree = "<group>"; };
+		CDADCA8A1E2FC77400FC19BB /* LocationSearchTable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LocationSearchTable.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -180,6 +182,7 @@
 				AE7B62E41DE0242F00D32D4B /* SettingsTableViewController.swift */,
 				0802D1FE1DE9DCAF00054425 /* DayForecastViewController.swift */,
 				843CFBA91E200469008463E6 /* CityPickerViewController.swift */,
+				CDADCA8A1E2FC77400FC19BB /* LocationSearchTable.swift */,
 				6D1F340D1DF84D0600714FD6 /* TodayViewCell.swift */,
 			);
 			path = Controller;
@@ -370,6 +373,7 @@
 				9DCF9BBF1DBA4286007518CC /* ForecastMO+CoreDataProperties.swift in Sources */,
 				AE7B62E51DE0242F00D32D4B /* SettingsTableViewController.swift in Sources */,
 				9DBD3EE11DBA961900ED8FEA /* YahooWeatherParser.swift in Sources */,
+				CDADCA8B1E2FC77400FC19BB /* LocationSearchTable.swift in Sources */,
 				9DCF9BC01DBA4286007518CC /* LocationMO+CoreDataProperties.swift in Sources */,
 				9DCF9BC61DBA4286007518CC /* YahooWeatherService.swift in Sources */,
 				9DCF9BBD1DBA4286007518CC /* LocationMO+CoreDataClass.swift in Sources */,

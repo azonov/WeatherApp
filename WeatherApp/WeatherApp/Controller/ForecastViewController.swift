@@ -94,6 +94,9 @@ class ForecastViewController: UITableViewController, LocationDelegate, ProviderD
         if let forecast = provider!.object(atIndex: indexPath.section) {
             cell.textLabel?.text = forecast.textString
             cell.detailTextLabel?.text = forecast.temperatureString
+            if indexPath.section <= 7 {
+                avgTemperatures.append(forecast.averageTemperature)
+            }
         }
         return cell
     }

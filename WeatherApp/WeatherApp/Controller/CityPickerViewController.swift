@@ -24,11 +24,39 @@ class CityPickerViewController: UITableViewController {
             }
         }
     }
-
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
     }
     
+    @IBAction func addNewCity(_ sender: UIBarButtonItem) {
+        let alert = UIAlertController(title: "New city",
+                                      message: "Add a new city",
+                                      preferredStyle: .alert)
+        
+        let saveAction = UIAlertAction(title: "Save",
+                                       style: .default) { (action: UIAlertAction!) -> Void in
+                                        
+                                        if (alert.textFields![0].text! != ""){
+                                            let textField = alert.textFields![0]
+                                            self.cities.append(textField.text!)
+                                            self.tableView.reloadData()
+                                        }
+        }
+        
+        let cancelAction = UIAlertAction(title: "Cancel",
+                                         style: .default) { (action: UIAlertAction!) -> Void in
+        }
+        
+        alert.addTextField {
+            (textField: UITextField!) -> Void in
+        }
+        
+        alert.addAction(saveAction)
+        alert.addAction(cancelAction)
+        
+        present(alert, animated: true, completion: nil)
+    }
 
     // MARK: - Table view data source
 
@@ -66,6 +94,14 @@ class CityPickerViewController: UITableViewController {
         
         let cell = tableView.cellForRow(at: indexPath)
         cell?.accessoryType = .checkmark
+    }
+    
+    override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCellEditingStyle, forRowAt indexPath: IndexPath) {
+        if (editingStyle == UITableViewCellEditingStyle.delete) {
+            cities.remove(at: indexPath.row)
+            let indexPaths = [indexPath]
+            tableView.deleteRows(at: indexPaths as [IndexPath], with: UITableViewRowAnimation.fade)
+        }
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {

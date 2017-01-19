@@ -90,10 +90,13 @@ class ForecastViewController: UITableViewController, LocationDelegate, ProviderD
             return cell
         }
         
-        let cell = UITableViewCell(style: .value1, reuseIdentifier: "ForecastCell")
+        let everyDayCellIdentifier = "EveryDayCell"
+        //let cell = tableView.dequeueReusableCell(withIdentifier: everyDayCellIdentifier) as! EveryDayViewCell
+        let cell = tableView.dequeueReusableCell(withIdentifier: everyDayCellIdentifier, for: indexPath) as! EveryDayViewCell
         if let forecast = provider!.object(atIndex: indexPath.section) {
-            cell.textLabel?.text = forecast.textString
-            cell.detailTextLabel?.text = forecast.temperatureString
+            cell.WeatherType.text = forecast.textString
+            cell.WeatherTemperature.text = forecast.temperatureString
+            cell.WeatherImage.image = UIImage(named: "WeatherIcon")
         }
         return cell
     }
@@ -114,7 +117,7 @@ class ForecastViewController: UITableViewController, LocationDelegate, ProviderD
         if indexPath.row == 0 && indexPath.section == 0 {
             return 110
         }
-        return 45
+        return 120
     }
     
     override func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {

@@ -9,7 +9,6 @@
 /* Begin PBXBuildFile section */
 		0802D1FF1DE9DCAF00054425 /* DayForecastViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0802D1FE1DE9DCAF00054425 /* DayForecastViewController.swift */; };
 		0802D2021DE9DEE700054425 /* WeatherState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0802D2011DE9DEE700054425 /* WeatherState.swift */; };
-		4D5C914D1E2CE3CD005D947F /* add_2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 4D5C914C1E2CE3CD005D947F /* add_2x.png */; };
 		6D1F340E1DF84D0600714FD6 /* TodayViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D1F340D1DF84D0600714FD6 /* TodayViewCell.swift */; };
 		843CFBA81E1FFFEF008463E6 /* menu.png in Resources */ = {isa = PBXBuildFile; fileRef = 843CFBA71E1FFFEF008463E6 /* menu.png */; };
 		843CFBAA1E200469008463E6 /* CityPickerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 843CFBA91E200469008463E6 /* CityPickerViewController.swift */; };
@@ -42,12 +41,13 @@
 		AE07BE421DE9650B00D80DE3 /* LocationAndMeasureCofiguration.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE07BE411DE9650B00D80DE3 /* LocationAndMeasureCofiguration.swift */; };
 		AE7B62E51DE0242F00D32D4B /* SettingsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE7B62E41DE0242F00D32D4B /* SettingsTableViewController.swift */; };
 		AEC316EB1DE969B8006F9EE8 /* CustomLocationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = AEC316EA1DE969B8006F9EE8 /* CustomLocationManager.swift */; };
+		CDADCA8B1E2FC77400FC19BB /* LocationSearchTable.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDADCA8A1E2FC77400FC19BB /* LocationSearchTable.swift */; };
+		CDADCA8F1E2FF77500FC19BB /* add_2x.png in Resources */ = {isa = PBXBuildFile; fileRef = CDADCA8E1E2FF77500FC19BB /* add_2x.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		0802D1FE1DE9DCAF00054425 /* DayForecastViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DayForecastViewController.swift; sourceTree = "<group>"; };
 		0802D2011DE9DEE700054425 /* WeatherState.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WeatherState.swift; sourceTree = "<group>"; };
-		4D5C914C1E2CE3CD005D947F /* add_2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = add_2x.png; path = ../../../../../Downloads/ic_add_black_24dp/ios/ic_add.imageset/add_2x.png; sourceTree = "<group>"; };
 		6D1F340D1DF84D0600714FD6 /* TodayViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TodayViewCell.swift; sourceTree = "<group>"; };
 		843CFBA71E1FFFEF008463E6 /* menu.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = menu.png; sourceTree = "<group>"; };
 		843CFBA91E200469008463E6 /* CityPickerViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CityPickerViewController.swift; sourceTree = "<group>"; };
@@ -81,6 +81,8 @@
 		AE07BE411DE9650B00D80DE3 /* LocationAndMeasureCofiguration.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LocationAndMeasureCofiguration.swift; sourceTree = "<group>"; };
 		AE7B62E41DE0242F00D32D4B /* SettingsTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingsTableViewController.swift; sourceTree = "<group>"; };
 		AEC316EA1DE969B8006F9EE8 /* CustomLocationManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomLocationManager.swift; sourceTree = "<group>"; };
+		CDADCA8A1E2FC77400FC19BB /* LocationSearchTable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LocationSearchTable.swift; sourceTree = "<group>"; };
+		CDADCA8E1E2FF77500FC19BB /* add_2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = add_2x.png; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -106,7 +108,7 @@
 			isa = PBXGroup;
 			children = (
 				843CFBA71E1FFFEF008463E6 /* menu.png */,
-				4D5C914C1E2CE3CD005D947F /* add_2x.png */,
+				CDADCA8E1E2FF77500FC19BB /* add_2x.png */,
 			);
 			name = Images;
 			sourceTree = "<group>";
@@ -180,6 +182,7 @@
 				AE7B62E41DE0242F00D32D4B /* SettingsTableViewController.swift */,
 				0802D1FE1DE9DCAF00054425 /* DayForecastViewController.swift */,
 				843CFBA91E200469008463E6 /* CityPickerViewController.swift */,
+				CDADCA8A1E2FC77400FC19BB /* LocationSearchTable.swift */,
 				6D1F340D1DF84D0600714FD6 /* TodayViewCell.swift */,
 			);
 			path = Controller;
@@ -336,7 +339,7 @@
 				9D859B1D1D9E32A80055F23A /* Info.plist in Resources */,
 				843CFBA81E1FFFEF008463E6 /* menu.png in Resources */,
 				9D859B1F1D9E32DB0055F23A /* LaunchScreen.storyboard in Resources */,
-				4D5C914D1E2CE3CD005D947F /* add_2x.png in Resources */,
+				CDADCA8F1E2FF77500FC19BB /* add_2x.png in Resources */,
 				9D859B1C1D9E32A80055F23A /* Assets.xcassets in Resources */,
 				9D859B211D9E335D0055F23A /* Main.storyboard in Resources */,
 			);
@@ -370,6 +373,7 @@
 				9DCF9BBF1DBA4286007518CC /* ForecastMO+CoreDataProperties.swift in Sources */,
 				AE7B62E51DE0242F00D32D4B /* SettingsTableViewController.swift in Sources */,
 				9DBD3EE11DBA961900ED8FEA /* YahooWeatherParser.swift in Sources */,
+				CDADCA8B1E2FC77400FC19BB /* LocationSearchTable.swift in Sources */,
 				9DCF9BC01DBA4286007518CC /* LocationMO+CoreDataProperties.swift in Sources */,
 				9DCF9BC61DBA4286007518CC /* YahooWeatherService.swift in Sources */,
 				9DCF9BBD1DBA4286007518CC /* LocationMO+CoreDataClass.swift in Sources */,

@@ -46,7 +46,7 @@ class ForecastViewController: UITableViewController, LocationDelegate, ProviderD
             self.navigationItem.title = self.navigationItem.title! + " (" + city! + ")"
         }
         
-        provider = WeatherProvider.weatherProvider(forService: .Yahoo, location: city!)
+        provider = WeatherProvider.weatherProvider(forService: currentService, location: city!)
         provider!.delegate = self
     }
     

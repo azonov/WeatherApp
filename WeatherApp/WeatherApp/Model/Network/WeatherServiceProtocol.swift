@@ -13,8 +13,10 @@ enum Result<T> {
     case failure(Error)
 }
 
-struct WeatherServiceError: Error {
-    enum Code: Int {
+struct WeatherServiceError: Error
+{
+    enum Code: Int
+    {
         case URLError                 = -6000
         case NetworkRequestFailed     = -6001
         case JSONSerializationFailed  = -6002
@@ -24,14 +26,16 @@ struct WeatherServiceError: Error {
     let errorCode: Code
 }
 
-protocol ForecastProtocol {
+protocol ForecastProtocol
+{
     var date: String { get }
     var low: String { get }
     var high: String { get }
     var text: String { get }
 }
 
-protocol WeatherProtocol {
+protocol WeatherProtocol
+{
     var location : String { get }
     var forecasts : [ForecastProtocol] { get }
 }

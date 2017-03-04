@@ -8,7 +8,8 @@
 
 import Foundation
 
-class LocationAndMeasureConfiguration{
+class LocationAndMeasureConfiguration
+{
 
     private var location: String?
     private var units: Temperature?

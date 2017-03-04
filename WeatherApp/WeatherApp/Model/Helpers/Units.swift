@@ -9,6 +9,6 @@
 import Foundation
 
 enum Temperature: String {
-    case celsius = "c"
+    case celsius2 = "c"
     case fahrenheit = "f"
 }

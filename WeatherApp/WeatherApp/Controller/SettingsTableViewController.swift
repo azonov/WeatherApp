@@ -15,13 +15,16 @@ class SettingsTableViewController: UITableViewController {
     @IBOutlet weak var locationTextField: UITextField!
     @IBOutlet weak var measureSwitch: UISegmentedControl!
     
-    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        if indexPath.section == 0 {
+    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath)
+    {
+        if indexPath.section == 0
+        {
          locationTextField.becomeFirstResponder()
         }
     }
     
-    @IBAction func OnDone(_ sender: AnyObject) {
+    @IBAction func OnDone(_ sender: AnyObject)
+    {
        let selectedPlace = locationTextField.text ?? ""
        let selectedMeasure: String? = measureSwitch.titleForSegment(at: measureSwitch.selectedSegmentIndex)
        

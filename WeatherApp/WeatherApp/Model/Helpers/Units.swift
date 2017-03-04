@@ -9,6 +9,6 @@
 import Foundation
 
 enum Temperature: Character {
-    case celsius = "c"
+    case celsius1 = "c"
     case fahrenheit = "f"
 }
